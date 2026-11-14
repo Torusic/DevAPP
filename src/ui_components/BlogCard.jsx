@@ -5,7 +5,7 @@ import thumbnail from '../images/rent.png'
 
 function BlogCard() {
   return (
-    <article className='group relative flex flex-col  w-[300px] rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out'>
+    <article className='group relative flex flex-col ml-5  w-[300px] rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out'>
 
       {/* Thumbnail */}
       <div className='relative w-full h-[200px] items-center justify-center flex overflow-hidden'>
