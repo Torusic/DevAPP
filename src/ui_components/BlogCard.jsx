@@ -5,7 +5,7 @@ import thumbnail from '../images/rent.png'
 
 function BlogCard() {
   return (
-    <article className='group relative flex flex-col  m-2 '>
+    <article className='group relative flex flex-col  ml-5 '>
     <p className='text-2xl text-gradient font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent p-2'>Blogs</p>
     <div className='w-[300px] mb-5 rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out'>
       {/* Thumbnail */}
