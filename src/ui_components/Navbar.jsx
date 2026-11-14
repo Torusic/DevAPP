@@ -17,7 +17,7 @@ function Navbar() {
     ]
   return (
     <>
-    <nav className='fixed top-0 justify-between items-center right-0 left-0 p-3 flex gap-6'>
+    <nav className='fixed z-50 top-0 justify-between items-center right-0 left-0 p-3 flex gap-6'>
         <a href="/" className='relative text-2xl flex gap-2 items-center justify-center text-gradient font-bold text-blue-500'>Devfolio
 
         <p className="relative bg-blue-500 rounded-full flex items-center justify-center w-2 h-2">
@@ -69,9 +69,9 @@ function Navbar() {
         
 
 {isOpen && (
-  <div className="absolute top-full left-0 right-0
+  <div className="absolute top-full z-1001 left-0 right-0 mx-1 rounded-b-lg border-2 border-b-blue-300
     lg:hidden grid gap-2 p-5
-    bg-white/90 border-t border-slate-200 shadow-xl">
+    bg-white/95 border-t shadow-xl">
 
     {navLinks.map((link) => {
       const isActive = activeSection === link.href.slice(1)

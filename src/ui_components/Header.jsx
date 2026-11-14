@@ -15,14 +15,14 @@ function Header() {
   },[images.length])
   return (
     <section className='max-container section-padding py-20'>
-        <div className='relative w-full h-[250px] lg:h-[400px] overflow-hidden rounded-lg px-4 '>
+        <div className='relative  w-full h-[250px] lg:h-[400px] overflow-hidden rounded-lg px-4 '>
           {images.map((img,index)=>(
             <img 
             key={index}
             src={img} 
             alt={`Devfolio banner ${index+1}`}
             loading={index === 0 ? 'eager' : 'lazy'}
-            className={`absolute inset-0 w-full px-3 py-3 h-full object-cover lg:object-fill rounded-2xl transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full  px-3 py-3 h-full object-cover lg:object-fill rounded-2xl transition-opacity duration-1000 ${
               currentImage === index
                 ? 'opacity-100'
                 : 'opacity-0'
