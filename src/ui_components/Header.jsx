@@ -14,7 +14,7 @@ function Header() {
 
   },[images.length])
   return (
-    <section className='max-container section-padding py-20'>
+    <section className='max-container section-padding mt-16 mb-6'>
     <p className='text-center text-lg lg:text-xl text-gray-600  mb-3 max-w-xl mx-1'>
     <span className='font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>
       Welcome to Devfolio
