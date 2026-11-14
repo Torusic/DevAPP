@@ -21,7 +21,7 @@ function Header() {
     </span>{' '}
     — your developer identity, all in one place.
   </p>
-        <div className='relative  w-full h-[250px] lg:h-[400px] overflow-hidden rounded-lg px-2'>
+        <div className='relative  w-full h-[220px] lg:h-[400px] overflow-hidden rounded-xl px-4'>
           {images.map((img,index)=>(
             <img 
             key={index}
