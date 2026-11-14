@@ -1,7 +1,7 @@
 import React from 'react'
 import pic from '../images/profile.jpg'
 
-function CardFooter({ author = 'John Doe', date = '12 Nov, 2026' }) {
+function CardFooter({ author = 'Simon Muchuku', date = '12 Nov, 2026' }) {
   return (
     <div className='flex items-center gap-2.5 text-xs   font-medium text-gray-500 dark:text-gray-400'>
       <div className='w-8 h-8 rounded-full overflow-hidden ring-2 ring-white dark:ring-gray-900 shadow-sm shrink-0'>
