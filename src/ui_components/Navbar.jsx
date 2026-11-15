@@ -20,9 +20,9 @@ function Navbar() {
     <nav className='fixed z-50 top-0 bg-white justify-between items-center right-0 left-0 p-3 flex gap-6'>
         <a href="/" className='relative text-2xl flex gap-2 items-center justify-center text-gradient font-bold text-blue-500'>Devfolio
 
-        <p className="relative bg-blue-500 rounded-full flex items-center justify-center w-2 h-2">
-          <p className="absolute bg-blue-200/75 rounded-full animate-pulse  w-4 h-4"></p>
-        </p>
+       <div className="relative bg-blue-500 rounded-full flex items-center justify-center w-2 h-2">
+    <span className="absolute bg-blue-200/75 rounded-full animate-pulse w-4 h-4 rounded-full"></span>
+</div>
         </a>
         <div className='lg:flex hidden  justify-between items-center p-3 gap-4 text-gradient'>
             {navLinks.map((link)=>{
