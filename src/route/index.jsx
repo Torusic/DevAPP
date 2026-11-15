@@ -4,15 +4,17 @@ import BottomBar from "@/ui_components/BottomBar";
 import Header from "@/ui_components/Header";
 import Opportunity from "@/ui_components/Opportunity";
 
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 
 const router=createBrowserRouter([
     {
-        path:"",
+        path:"/",
         element:<App/>,
-        children:[
-
+        children:[{
+          index:'/',
+          element:<Navigate to={'/home'} replace/>,
+        },
             {   path:'/',
                 element:<Bar/>,
                 children:[{

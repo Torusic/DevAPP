@@ -56,13 +56,13 @@ function Opportunity() {
   ]
 
   return (
-    <section className="min-h-screen bg-slate-50 0 px-5 py-12 md:px-10 lg:px-16">
+    <section className="min-h-screen bg-slate-50 0 px-5 py-1 md:px-10 lg:px-16">
 
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-12">
 
 
-        <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
+        <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent  tracking-tight">
           Find your next <span className="text-blue-600">opportunity.</span>
         </h1>
 
@@ -114,20 +114,6 @@ function Opportunity() {
 
       </div>
 
-      {/* Bottom CTA */}
-      <div className="max-w-6xl mx-auto mt-12 bg-slate-900 rounded-2xl p-8 md:p-10 text-center">
-        <h2 className="text-2xl font-bold text-white">
-          Have an opportunity to share?
-        </h2>
-
-        <p className="text-slate-400 text-sm mt-3">
-          Help developers discover their next big opportunity.
-        </p>
-
-        <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition">
-          Post an opportunity
-        </button>
-      </div>
 
     </section>
   )
