@@ -15,7 +15,7 @@ function BottomBar() {
         {name:'Profile',href:'#profile',icon:<CgProfile />}
     ]
   return (
-    <section className='px-2  h-full lg:hidden  sticky z-100 bottom-0 bg-white/60 backdrop-blur-md right-0 left-0  rounded-xl  border-2'>
+    <section className='px-2  py-2 h-full lg:hidden  sticky z-100 bottom-0 bg-white/60 backdrop-blur-md right-0 left-0  rounded-xl  border-2'>
         <div className='flex  p-2 w-[350px]'>
             {sidelinks.map((side)=>{
                 const isActive=active===side.name
