@@ -1,362 +1,136 @@
 
-import React, { useState } from 'react'
-import { FaBookmark, FaRegBookmark, FaSearch, FaMapMarkerAlt } from 'react-icons/fa'
-import { HiOutlineBriefcase, HiOutlineClock } from 'react-icons/hi'
-import { IoFilterOutline } from 'react-icons/io5'
+import React from 'react'
+import {
+  FaBriefcase,
+  FaGraduationCap,
+  FaLaptopCode,
+  FaTrophy,
+  FaUsers,
+  FaRocket
+} from 'react-icons/fa'
 
 function Opportunity() {
-
-    const [search, setSearch] = useState('')
-    const [category, setCategory] = useState('All')
-    const [saved, setSaved] = useState([])
-
-    const categories = [
-        'All',
-        'Internship',
-        'Full-time',
-        'Remote',
-        'Freelance',
-        'Graduate'
-    ]
-
-    const opportunities = [
-        {
-            id: 1,
-            company: 'Tamu Group',
-            role: 'Frontend Developer Intern',
-            location: 'Nairobi, Kenya',
-            type: 'Internship',
-            category: 'Frontend',
-            salary: 'Competitive',
-            deadline: '20 Nov 2026',
-            description: 'Work with the design and engineering teams to build responsive web applications.',
-            skills: ['React', 'JavaScript', 'CSS'],
-            logo: 'T',
-            color: 'bg-orange-100 text-orange-600',
-            featured: true
-        },
-        {
-            id: 2,
-            company: 'Saolix Group',
-            role: 'Junior Software Developer',
-            location: 'Nairobi, Kenya',
-            type: 'Full-time',
-            category: 'Full-stack',
-            salary: 'Not disclosed',
-            deadline: '30 Nov 2026',
-            description: 'Contribute to modern software applications and backend systems.',
-            skills: ['React', 'Python', 'PostgreSQL'],
-            logo: 'S',
-            color: 'bg-blue-100 text-blue-600',
-            featured: true
-        },
-        {
-            id: 3,
-            company: 'Tech Innovations',
-            role: 'Python Backend Developer',
-            location: 'Remote',
-            type: 'Remote',
-            category: 'Backend',
-            salary: 'Negotiable',
-            deadline: '05 Dec 2026',
-            description: 'Develop APIs, manage databases and build scalable backend services.',
-            skills: ['Python', 'Django', 'REST API'],
-            logo: 'T',
-            color: 'bg-purple-100 text-purple-600',
-            featured: false
-        },
-        {
-            id: 4,
-            company: 'Digital Solutions',
-            role: 'Software Engineering Graduate',
-            location: 'Nairobi, Kenya',
-            type: 'Graduate',
-            category: 'Full-stack',
-            salary: 'Not disclosed',
-            deadline: '10 Dec 2026',
-            description: 'Join a development team and gain practical experience building digital products.',
-            skills: ['JavaScript', 'React', 'Node.js'],
-            logo: 'D',
-            color: 'bg-green-100 text-green-600',
-            featured: false
-        }
-    ]
-
-    const toggleSave = (id) => {
-        setSaved(prev =>
-            prev.includes(id)
-                ? prev.filter(item => item !== id)
-                : [...prev, id]
-        )
+  const opportunity = [
+    {
+      title: 'Jobs',
+      description: 'Discover career opportunities, connect with employers and find your next role in technology.',
+      icon: <FaBriefcase />,
+      bg: 'from-blue-50 to-indigo-100',
+      color: 'text-blue-600'
+    },
+    {
+      title: 'Internships',
+      description: 'Gain practical experience, develop industry-ready skills and grow your career.',
+      icon: <FaGraduationCap />,
+      bg: 'from-purple-50 to-violet-100',
+      color: 'text-purple-600'
+    },
+    {
+      title: 'Freelance',
+      description: 'Find paid projects, work with clients and turn your technical skills into income.',
+      icon: <FaLaptopCode />,
+      bg: 'from-emerald-50 to-teal-100',
+      color: 'text-emerald-600'
+    },
+    {
+      title: 'Hackathons',
+      description: 'Build innovative solutions, challenge yourself and showcase your creativity.',
+      icon: <FaTrophy />,
+      bg: 'from-orange-50 to-amber-100',
+      color: 'text-orange-600'
+    },
+    {
+      title: 'Collaborations',
+      description: 'Connect with developers, find project partners and build something meaningful.',
+      icon: <FaUsers />,
+      bg: 'from-pink-50 to-rose-100',
+      color: 'text-pink-600'
+    },
+    {
+      title: 'Startups',
+      description: 'Discover emerging startups, join founding teams and bring ideas to life.',
+      icon: <FaRocket />,
+      bg: 'from-cyan-50 to-sky-100',
+      color: 'text-cyan-600'
     }
+  ]
 
-    const filteredOpportunities = opportunities.filter((job) => {
-        const matchesSearch =
-            job.role.toLowerCase().includes(search.toLowerCase()) ||
-            job.company.toLowerCase().includes(search.toLowerCase()) ||
-            job.skills.some(skill =>
-                skill.toLowerCase().includes(search.toLowerCase())
-            )
+  return (
+    <section className="min-h-screen bg-slate-50 0 px-5 py-12 md:px-10 lg:px-16">
 
-        const matchesCategory =
-            category === 'All' || job.type === category
+      {/* Header */}
+      <div className="max-w-3xl mx-auto text-center mb-12">
 
-        return matchesSearch && matchesCategory
-    })
 
-    return (
-        <section className='min-h-screen bg-slate-50 px-4 md:px-8 py-8 pb-28'>
+        <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
+          Find your next <span className="text-blue-600">opportunity.</span>
+        </h1>
 
-            {/* Header */}
-            <div className='max-w-7xl mx-auto'>
+        <p className="text-slate-500 mt-4 text-sm md:text-base leading-relaxed">
+          Explore opportunities, connect with innovative teams and take
+          the next step in your developer journey.
+        </p>
+      </div>
 
-                <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8'>
+      {/* Opportunity Cards */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    <div>
-                        <p className='text-sm text-blue-600 font-semibold mb-2'>
-                            DEVFOLII / CAREERS
-                        </p>
+        {opportunity.map((opp) => (
+          <div
+            key={opp.title}
+            className={`group relative overflow-hidden bg-gradient-to-br ${opp.bg}
+            border border-white rounded-2xl p-6 shadow-sm
+            hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+          >
 
-                        <h1 className='text-2xl md:text-3xl font-bold text-slate-900'>
-                            Discover Opportunities
-                        </h1>
+            {/* Decorative background circle */}
+            <div className="absolute -right-10 -top-10 w-36 h-36 bg-white/30 rounded-full group-hover:scale-125 transition-transform duration-500" />
 
-                        <p className='text-slate-500 mt-2 text-sm'>
-                            Find your next opportunity and take your career forward.
-                        </p>
-                    </div>
+            <div className="relative z-10">
 
-                    <button className='bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl text-sm font-semibold transition'>
-                        + Post an Opportunity
-                    </button>
+              {/* Icon */}
+              <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-xl ${opp.color} mb-6`}>
+                {opp.icon}
+              </div>
 
-                </div>
+              {/* Content */}
+              <h2 className="text-xl font-bold text-slate-800 mb-2">
+                {opp.title}
+              </h2>
 
-                {/* Search */}
-                <div className='bg-white border border-slate-200 rounded-2xl p-3 shadow-sm mb-7'>
+              <p className="text-sm text-slate-600 leading-6 min-h-[72px]">
+                {opp.description}
+              </p>
 
-                    <div className='flex items-center gap-3 px-3'>
-                        <FaSearch className='text-slate-400' />
-
-                        <input
-                            type='text'
-                            placeholder='Search jobs, companies or skills...'
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className='w-full outline-none py-3 text-sm text-slate-700'
-                        />
-
-                        <button className='hidden sm:flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-lg text-sm text-slate-600'>
-                            <IoFilterOutline />
-                            Filter
-                        </button>
-                    </div>
-
-                </div>
-
-                {/* Categories */}
-                <div className='flex items-center gap-2 overflow-x-auto pb-4 mb-5'>
-
-                    {categories.map((item) => (
-                        <button
-                            key={item}
-                            onClick={() => setCategory(item)}
-                            className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition
-                            ${category === item
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-white border border-slate-200 text-slate-600 hover:bg-blue-50'
-                            }`}
-                        >
-                            {item}
-                        </button>
-                    ))}
-
-                </div>
-
-                {/* Featured */}
-                <div className='mb-8'>
-                    <div className='flex justify-between items-center mb-4'>
-                        <div>
-                            <h2 className='font-bold text-lg text-slate-900'>
-                                Featured Opportunities
-                            </h2>
-                            <p className='text-sm text-slate-500 mt-1'>
-                                Handpicked opportunities worth exploring.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className='grid md:grid-cols-2 gap-4'>
-
-                        {opportunities.filter(job => job.featured).map(job => (
-
-                            <div key={job.id} className='bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md transition'>
-
-                                <div className='flex justify-between items-start mb-5'>
-
-                                    <div className='flex gap-3 items-center'>
-                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl ${job.color}`}>
-                                            {job.logo}
-                                        </div>
-
-                                        <div>
-                                            <h3 className='font-bold text-slate-900'>
-                                                {job.company}
-                                            </h3>
-                                            <p className='text-xs text-slate-500'>
-                                                {job.location}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <button
-                                        onClick={() => toggleSave(job.id)}
-                                        className='text-slate-400 hover:text-blue-600'
-                                        aria-label='Save opportunity'
-                                    >
-                                        {saved.includes(job.id)
-                                            ? <FaBookmark className='text-blue-600' />
-                                            : <FaRegBookmark />
-                                        }
-                                    </button>
-
-                                </div>
-
-                                <h3 className='font-bold text-lg text-slate-900 mb-2'>
-                                    {job.role}
-                                </h3>
-
-                                <p className='text-sm text-slate-500 leading-relaxed mb-4'>
-                                    {job.description}
-                                </p>
-
-                                <div className='flex flex-wrap gap-2 mb-5'>
-                                    {job.skills.map(skill => (
-                                        <span key={skill} className='bg-slate-100 text-slate-600 text-xs px-3 py-1.5 rounded-lg'>
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className='flex justify-between items-center border-t border-slate-100 pt-4'>
-                                    <span className='text-xs text-slate-500'>
-                                        Deadline: {job.deadline}
-                                    </span>
-
-                                    <button className='bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700'>
-                                        View Details
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        ))}
-
-                    </div>
-                </div>
-
-                {/* All Opportunities */}
-                <div>
-
-                    <div className='flex justify-between items-center mb-5'>
-                        <div>
-                            <h2 className='font-bold text-lg text-slate-900'>
-                                All Opportunities
-                            </h2>
-                            <p className='text-sm text-slate-500 mt-1'>
-                                {filteredOpportunities.length} opportunities found
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className='space-y-4'>
-
-                        {filteredOpportunities.map(job => (
-
-                            <div key={job.id} className='bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-200 transition'>
-
-                                <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4'>
-
-                                    <div className='flex gap-3 items-start'>
-
-                                        <div className={`w-12 h-12 shrink-0 rounded-xl flex items-center justify-center font-bold text-xl ${job.color}`}>
-                                            {job.logo}
-                                        </div>
-
-                                        <div>
-                                            <p className='text-xs text-slate-500 mb-1'>
-                                                {job.company}
-                                            </p>
-
-                                            <h3 className='font-bold text-slate-900'>
-                                                {job.role}
-                                            </h3>
-
-                                            <div className='flex flex-wrap gap-3 mt-2 text-xs text-slate-500'>
-                                                <span className='flex items-center gap-1'>
-                                                    <FaMapMarkerAlt />
-                                                    {job.location}
-                                                </span>
-
-                                                <span className='flex items-center gap-1'>
-                                                    <HiOutlineBriefcase />
-                                                    {job.type}
-                                                </span>
-
-                                                <span className='flex items-center gap-1'>
-                                                    <HiOutlineClock />
-                                                    {job.deadline}
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div className='flex gap-2 items-center'>
-
-                                        <button
-                                            onClick={() => toggleSave(job.id)}
-                                            className='p-3 border border-slate-200 rounded-xl text-slate-500 hover:text-blue-600'
-                                            aria-label='Save opportunity'
-                                        >
-                                            {saved.includes(job.id)
-                                                ? <FaBookmark />
-                                                : <FaRegBookmark />
-                                            }
-                                        </button>
-
-                                        <button className='bg-blue-600 text-white px-5 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700'>
-                                            Apply Now
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        ))}
-
-                        {filteredOpportunities.length === 0 && (
-                            <div className='bg-white border border-slate-200 rounded-2xl p-10 text-center'>
-                                <FaSearch className='mx-auto text-3xl text-slate-300 mb-3' />
-                                <h3 className='font-bold text-slate-800'>
-                                    No opportunities found
-                                </h3>
-                                <p className='text-sm text-slate-500 mt-2'>
-                                    Try another search term or category.
-                                </p>
-                            </div>
-                        )}
-
-                    </div>
-
-                </div>
+              {/* Explore Button */}
+              <button className={`mt-6 flex items-center gap-2 text-sm font-semibold ${opp.color} group-hover:gap-4 transition-all duration-300`}>
+                Explore opportunities
+                <span>→</span>
+              </button>
 
             </div>
+          </div>
+        ))}
 
-        </section>
-    )
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="max-w-6xl mx-auto mt-12 bg-slate-900 rounded-2xl p-8 md:p-10 text-center">
+        <h2 className="text-2xl font-bold text-white">
+          Have an opportunity to share?
+        </h2>
+
+        <p className="text-slate-400 text-sm mt-3">
+          Help developers discover their next big opportunity.
+        </p>
+
+        <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition">
+          Post an opportunity
+        </button>
+      </div>
+
+    </section>
+  )
 }
 
 export default Opportunity

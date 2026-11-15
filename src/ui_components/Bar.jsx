@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import SideBar from './SideBar'
+import { Outlet } from 'react-router-dom'
 
 
 function Bar() {
@@ -10,7 +11,7 @@ function Bar() {
             <SideBar/>
         </div>
         <div className=' flex-4'>
-          <Header/>
+          <Outlet/>
         </div>
 
     </div>
