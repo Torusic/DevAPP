@@ -1,0 +1,44 @@
+import React, { useState } from 'react'
+import { CgProfile } from 'react-icons/cg'
+import { FaBookmark, FaBriefcase } from 'react-icons/fa'
+import { HiUserGroup } from 'react-icons/hi'
+import { IoMdHome } from 'react-icons/io'
+
+function SideBar() {
+
+    const[active,setActive]=useState('#home')
+    const sidelinks=[
+        {name:'Home',href:'#home',icon:<IoMdHome size={20} />},
+        {name:'Opportunities',href:'#opportunities',icon:<FaBriefcase />},
+        {name:'Developers',href:'#developers',icon:<HiUserGroup />},
+        {name:'Saved',href:'#saved',icon:<FaBookmark />},
+        {name:'Profile',href:'#profile',icon:<CgProfile />}
+    ]
+  return (
+    <section className='p-2  h-full border border-t-blue-300'>
+        <div className='flex flex-col p-2'>
+            {sidelinks.map((side)=>{
+                const isActive=active===side.name
+
+                return(
+                    <div 
+                    onClick={()=>setActive(side.name)}
+                    className={`flex items-center px-2 space-x-2 rounded-xs ${isActive ?"bg-blue-100":"hover:bg-blue-50 cursor-pointer "}`}>
+                        <p className='p-2 text-blue-600 '>{side.icon}</p>
+                        <p className='p-2 font-semibold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent  '>{side.name}</p>
+
+                    </div>
+                )
+            })
+
+            }
+
+
+        </div>
+
+    </section>
+
+  )
+}
+
+export default SideBar

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import banner from '../images/header.png'
 import banner2 from '../images/header2.png'
+import BlogCard from './BlogCard'
 
 function Header() {
   const images= [banner,banner2]
@@ -14,8 +15,8 @@ function Header() {
 
   },[images.length])
   return (
-    <section className='max-container section-padding mt-16 mb-6'>
-    <p className='text-center text-lg lg:text-xl text-gray-600  mb-3 max-w-xl mx-1'>
+    <section className='max-container section-padding  mb-6'>
+    <p className='text-center text-lg lg:text-xl text-gray-600  mb-3  mx-1'>
     <span className='font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>
       Welcome to Devfolio
     </span>{' '}
@@ -41,6 +42,7 @@ function Header() {
 
 
         </div>
+        <BlogCard/>
 
     </section>
   )
