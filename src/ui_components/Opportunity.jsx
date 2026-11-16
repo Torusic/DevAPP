@@ -16,7 +16,7 @@ function Opportunity() {
       title: 'Jobs',
       description: 'Discover career opportunities, connect with employers and find your next role in technology.',
       icon: <FaBriefcase />,
-      bg: 'from-blue-100 to-indigo-300',
+      bg: 'from-blue-50 to-indigo-200',
       color: 'text-blue-600',
       to:'/opportunities/jobs'
     },
@@ -24,21 +24,21 @@ function Opportunity() {
       title: 'Internships',
       description: 'Gain practical experience, develop industry-ready skills and grow your career.',
       icon: <FaGraduationCap />,
-      bg: 'from-purple-100 to-violet-200',
+      bg: 'from-purple-50 to-violet-200',
       color: 'text-purple-600'
     },
     {
       title: 'Freelance',
       description: 'Find paid projects, work with clients and turn your technical skills into income.',
       icon: <FaLaptopCode />,
-      bg: 'from-emerald-100 to-teal-200',
+      bg: 'from-emerald-50 to-teal-200',
       color: 'text-emerald-600'
     },
     {
       title: 'Hackathons',
       description: 'Build innovative solutions, challenge yourself and showcase your creativity.',
       icon: <FaTrophy />,
-      bg: 'from-orange-100 to-amber-200',
+      bg: 'from-orange-50 to-amber-200',
       color: 'text-orange-600'
     },
     {
@@ -52,13 +52,13 @@ function Opportunity() {
       title: 'Startups',
       description: 'Discover emerging startups, join founding teams and bring ideas to life.',
       icon: <FaRocket />,
-      bg: 'from-cyan-100 to-sky-200',
+      bg: 'from-cyan-50 to-sky-200',
       color: 'text-cyan-600'
     }
   ]
 
   return (
-    <section className="min-h-screen bg-blue-50 top-0 px-5 py-5 md:px-10 py-2 lg:px-16 rounded-lg">
+    <section className="min-h-screen bg-slate-50 top-0 px-5 py-5 md:px-10 py-2 lg:px-16 rounded-lg">
 
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-12">
