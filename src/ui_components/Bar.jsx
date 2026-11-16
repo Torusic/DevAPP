@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 
 function Bar() {
   return (
-    <div className='flex mt-25 min-h-screen  '>
+    <div className='flex mt-20 min-h-screen  '>
         <div className='flex-1 hidden lg:block '>
             <SideBar/>
         </div>

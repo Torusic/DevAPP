@@ -1,0 +1,313 @@
+
+import React, { useState } from 'react'
+import {
+  FaSearch,
+  FaMapMarkerAlt,
+  FaBriefcase,
+  FaRegBookmark,
+  FaBookmark,
+  
+  FaClock,
+  FaBuilding,
+  FaFilter
+} from 'react-icons/fa'
+
+function Jobs() {
+  const [search, setSearch] = useState('')
+  const [location, setLocation] = useState('')
+  const [category, setCategory] = useState('All')
+  const [saved, setSaved] = useState([])
+
+  const jobs = [
+    {
+      id: 1,
+      company: 'TechNova',
+      title: 'Junior Full Stack Developer',
+      type: 'Full-time',
+      location: 'Nairobi, Kenya',
+      experience: 'Entry Level',
+      salary: 'KSh 40k – 70k',
+      category: 'Engineering',
+      posted: '2 days ago',
+      logo: 'T',
+      color: 'bg-blue-600',
+      featured: true
+    },
+    {
+      id: 2,
+      company: 'CloudWorks',
+      title: 'Frontend React Developer',
+      type: 'Remote',
+      location: 'Remote',
+      experience: 'Junior',
+      salary: 'Competitive',
+      category: 'Frontend',
+      posted: '1 day ago',
+      logo: 'C',
+      color: 'bg-purple-600',
+      featured: false
+    },
+    {
+      id: 3,
+      company: 'Digital Labs',
+      title: 'Backend Python Developer',
+      type: 'Full-time',
+      location: 'Nairobi, Kenya',
+      experience: 'Entry Level',
+      salary: 'KSh 50k – 90k',
+      category: 'Backend',
+      posted: '3 days ago',
+      logo: 'D',
+      color: 'bg-emerald-600',
+      featured: false
+    }
+  ]
+
+  const categories = ['All', 'Engineering', 'Frontend', 'Backend']
+
+  const filteredJobs = jobs.filter(job => {
+    const matchesSearch=
+    `${job.title}${job.company}`.toLowerCase().includes(search.toLowerCase())
+
+    const matchesLocation =
+      job.location.toLowerCase().includes(location.toLowerCase())
+
+    const matchesCategory =
+      category === 'All' || job.category === category
+
+    return matchesSearch && matchesLocation && matchesCategory
+  })
+
+  const toggleSave = (id) => {
+    setSaved(prev =>
+      prev.includes(id)
+        ? prev.filter(item => item !== id)
+        : [...prev, id]
+    )
+  }
+
+  return (
+    <section className="min-h-screen bg-[#F8FAFC] px-5 py-8 md:px-10 lg:px-16">
+
+      <div className="max-w-7xl mx-auto">
+
+        {/* Page heading */}
+       <p className='font-bold text-2xl text-gradient p-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>Jobs</p>
+
+        {/* Search panel */}
+        <div className="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3">
+
+            <div className="flex items-center gap-3 px-4">
+                <div className='bg-purple-200 p-2 rounded-lg'>
+                    <FaSearch className="text-purple-700 " />   
+                </div>
+              
+              <input
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                placeholder="Job title, skill or company"
+                className="w-full py-3 outline-none bg-purple-50 p-2 rounded-lg text-sm text-slate-700"
+              />
+            </div>
+
+            <div className="flex items-center gap-3 px-4 border-t md:border-t-0 md:border-l border-slate-100">
+                <div className='bg-blue-200 p-2 rounded-lg'>
+                    <FaMapMarkerAlt className="text-blue-700" />
+                </div>
+              
+              <input
+                value={location}
+                onChange={e => setLocation(e.target.value)}
+                placeholder="Location or remote"
+                className="w-full py-3 outline-none text-sm bg-blue-50 p-2 rounded-lg text-sm text-slate-700"
+              />
+            </div>
+
+            <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-xl text-sm font-semibold transition">
+              Search jobs
+            </button>
+
+          </div>
+        </div>
+
+        {/* Insights */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+
+          {[
+            { label: 'Opportunities', value: jobs.length, detail: 'Currently listed' },
+            { label: 'Remote positions', value: jobs.filter(j => j.type === 'Remote').length, detail: 'Work from anywhere' },
+            { label: 'Saved jobs', value: saved.length, detail: 'Your shortlist' }
+          ].map(stat => (
+            <div key={stat.label} className="bg-white border-2 border-purple-200  rounded-2xl p-5">
+              <p className="text-sm text-slate-500">{stat.label}</p>
+              <h2 className="text-2xl font-bold text-slate-900 mt-2">{stat.value}</h2>
+              <p className="text-xs text-slate-400 mt-1">{stat.detail}</p>
+            </div>
+          ))}
+
+        </div>
+
+        {/* Job discovery */}
+        <div className="mt-12">
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">
+                Explore opportunities
+              </h2>
+              <p className="text-sm text-slate-500 mt-1">
+                Find a role that matches your skills and ambitions.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 text-sm text-slate-500">
+              <FaFilter />
+              Filter by category
+            </div>
+
+          </div>
+
+          {/* Categories */}
+          <div className="flex gap-2 flex-wrap mb-6">
+
+            {categories.map(item => (
+              <button
+                key={item}
+                onClick={() => setCategory(item)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  category === item
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:border-blue-300'
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+
+          </div>
+
+          {/* Listings */}
+          <div className="space-y-4">
+
+            {filteredJobs.map(job => (
+
+              <article
+                key={job.id}
+                className="bg-white border border-slate-200 rounded-2xl p-5 md:p-6 hover:border-blue-200 hover:shadow-md transition"
+              >
+
+                <div className="flex items-start gap-4">
+
+                  <div className={`${job.color} w-12 h-12 rounded-xl text-white flex items-center justify-center font-bold text-xl shrink-0`}>
+                    {job.logo}
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+
+                      <span className="text-xs font-medium text-slate-500">
+                        {job.company}
+                      </span>
+
+                      {job.featured && (
+                        <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">
+                          Featured
+                        </span>
+                      )}
+
+                    </div>
+
+                    <h3 className="font-bold text-lg text-slate-900">
+                      {job.title}
+                    </h3>
+
+                    <div className="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-slate-500">
+
+                      <span className="flex items-center gap-2">
+                        <FaBriefcase /> {job.type}
+                      </span>
+
+                      <span className="flex items-center gap-2">
+                        <FaMapMarkerAlt /> {job.location}
+                      </span>
+
+                      <span className="flex items-center gap-2">
+                        <FaBuilding /> {job.experience}
+                      </span>
+
+                      <span className="flex items-center gap-2">
+                        <FaClock /> {job.posted}
+                      </span>
+
+                    </div>
+
+                    <div className="mt-4 flex flex-wrap items-center gap-3">
+
+                      <span className="text-sm font-semibold text-slate-800">
+                        {job.salary}
+                      </span>
+
+                      <span className="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">
+                        {job.category}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <button
+                    onClick={() => toggleSave(job.id)}
+                    className="text-slate-400 hover:text-blue-600 p-2"
+                    aria-label="Save job"
+                  >
+                    {saved.includes(job.id)
+                      ? <FaBookmark className="text-blue-600" />
+                      : <FaRegBookmark />
+                    }
+                  </button>
+
+                </div>
+
+                <div className="border-t border-slate-100 mt-5 pt-4 flex justify-between items-center">
+
+                  <span className="text-xs text-slate-400">
+                    Posted {job.posted}
+                  </span>
+
+                  <button className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700">
+                    View details 
+                  </button>
+
+                </div>
+
+              </article>
+
+            ))}
+
+            {filteredJobs.length === 0 && (
+              <div className="bg-white border border-slate-200 rounded-2xl p-12 text-center">
+                <FaSearch className="text-3xl text-slate-300 mx-auto mb-4" />
+                <h3 className="font-semibold text-slate-800">
+                  No opportunities found
+                </h3>
+                <p className="text-sm text-slate-500 mt-2">
+                  Try adjusting your search or category.
+                </p>
+              </div>
+            )}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  )
+}
+
+export default Jobs

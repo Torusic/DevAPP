@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaRocket
 } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 function Opportunity() {
   const opportunity = [
@@ -16,7 +17,8 @@ function Opportunity() {
       description: 'Discover career opportunities, connect with employers and find your next role in technology.',
       icon: <FaBriefcase />,
       bg: 'from-blue-100 to-indigo-300',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
+      to:'/opportunities/jobs'
     },
     {
       title: 'Internships',
@@ -56,7 +58,7 @@ function Opportunity() {
   ]
 
   return (
-    <section className="min-h-screen bg-blue-50 top-0 px-5 py-3 md:px-10 py-2 lg:px-16 rounded-lg">
+    <section className="min-h-screen bg-blue-50 top-0 px-5 py-5 md:px-10 py-2 lg:px-16 rounded-lg">
 
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-12">
@@ -103,10 +105,13 @@ function Opportunity() {
               </p>
 
               {/* Explore Button */}
-              <button className={`mt-6 flex items-center gap-2 text-sm font-semibold ${opp.color} group-hover:gap-4 transition-all duration-300`}>
-                Explore opportunities
+              <Link
+                to={opp.to}
+                className={`mt-6 flex items-center gap-2 text-sm font-semibold ${opp.color} group-hover:gap-4 transition-all duration-300`}
+              >
+                Explore {opp.title.toLowerCase()}
                 <span>→</span>
-              </button>
+              </Link>
 
             </div>
           </div>
