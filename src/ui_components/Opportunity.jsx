@@ -56,7 +56,7 @@ function Opportunity() {
   ]
 
   return (
-    <section className="min-h-screen bg-white 0 px-5 py-1 md:px-10 lg:px-16">
+    <section className="min-h-screen bg-blue-50 top-0 px-5 py-3 md:px-10 py-2 lg:px-16 rounded-lg">
 
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-12">
@@ -73,7 +73,7 @@ function Opportunity() {
       </div>
 
       {/* Opportunity Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto backdrop-blur-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {opportunity.map((opp) => (
           <div
