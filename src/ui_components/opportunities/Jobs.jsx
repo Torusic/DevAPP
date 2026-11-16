@@ -100,28 +100,28 @@ function Jobs() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3">
 
             <div className="flex items-center gap-3 px-4">
-                <div className='bg-purple-200 p-2 rounded-lg'>
-                    <FaSearch className="text-purple-700 " />   
+                <div className='bg-purple-100 p-2 rounded-lg'>
+                    <FaSearch className="text-purple-400 " />   
                 </div>
               
               <input
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="Job title, skill or company"
-                className="w-full py-3 outline-none bg-purple-50 p-2 rounded-lg text-sm text-slate-700"
+                className="w-full py-3 outline-none bg-gray-100 p-2 rounded-lg text-sm text-slate-700"
               />
             </div>
 
             <div className="flex items-center gap-3 px-4 border-t md:border-t-0 md:border-l border-slate-100">
-                <div className='bg-blue-200 p-2 rounded-lg'>
-                    <FaMapMarkerAlt className="text-blue-700" />
+                <div className='bg-blue-100 p-2 rounded-lg'>
+                    <FaMapMarkerAlt className="text-blue-400" />
                 </div>
               
               <input
                 value={location}
                 onChange={e => setLocation(e.target.value)}
                 placeholder="Location or remote"
-                className="w-full py-3 outline-none text-sm bg-blue-50 p-2 rounded-lg text-sm text-slate-700"
+                className="w-full py-3 outline-none text-sm bg-gray-100 p-2 rounded-lg text-sm text-slate-700"
               />
             </div>
 
@@ -179,7 +179,7 @@ function Jobs() {
                 onClick={() => setCategory(item)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                   category === item
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-purple-600 text-white'
                     : 'bg-white border border-slate-200 text-slate-600 hover:border-blue-300'
                 }`}
               >
