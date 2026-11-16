@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { FaBookmark, FaBriefcase } from 'react-icons/fa'
 import { HiUserGroup } from 'react-icons/hi'
-import { IoMdHome } from 'react-icons/io'
+import { IoMdAddCircleOutline, IoMdHome } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
 function BottomBar() {
@@ -11,12 +11,12 @@ function BottomBar() {
     const sidelinks=[
         {name:'Home',href:'/home',icon:<IoMdHome size={20} />},
         {name:'Opportunities',href:'/opportunities',icon:<FaBriefcase />},
+        {name:'create',href:'/create',icon:<IoMdAddCircleOutline size={30} />},
         {name:'Developers',href:'/developers',icon:<HiUserGroup />},
-        {name:'Saved',href:'/saved',icon:<FaBookmark />},
         {name:'Profile',href:'/profile',icon:<CgProfile />}
     ]
   return (
-    <section className='px-2  py-2 h-full lg:hidden  sticky z-100 bottom-0 bg-white/60 backdrop-blur-md right-0 left-0  rounded-xl  border-2'>
+    <section className='px-2   h-full lg:hidden  sticky z-100 bottom-0 bg-white/60 backdrop-blur-md right-0 left-0  rounded-xl  border-2'>
         <div className='flex  p-2 w-[350px]'>
             {sidelinks.map((side)=>{
                 const isActive=active===side.name

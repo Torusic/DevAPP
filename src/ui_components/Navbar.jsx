@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button"
 import React, { useState } from 'react'
-import { FaHamburger } from "react-icons/fa"
+import { FaArrowCircleRight, FaHamburger, FaSearch } from "react-icons/fa"
 import { IoClose } from "react-icons/io5"
 import { Switch } from "@/components/ui/switch"
 import ResponsiveNavbar from "./ResponsiveNavbar"
+import { CiSearch } from "react-icons/ci";
+
 
 function Navbar() {
     const[activeSection, setActiveSection]=useState(false)
     const[isOpen,setIsOpen]=useState(false)
     const[showNavbar, setShowNavbar]=useState(false)
+    const[showSearch,setShowSearch]=useState(false)
    const navLinks=[
         {name:'Login', href:'#login'},
         {name:'logout', href:'#logout'},
@@ -25,6 +28,7 @@ function Navbar() {
 </div>
         </a>
         <div className='lg:flex hidden  justify-between items-center p-3 gap-4 text-gradient'>
+          <FaSearch size={20} className="text-blue-400 cursor-pointer" />
             {navLinks.map((link)=>{
                 const isActive=activeSection===link.href.slice(1)
                 return(
@@ -46,14 +50,23 @@ function Navbar() {
                 )
 
             }) }
+            
 
             <Button className="mt-2 bg-blue-500
       hover:bg-emerald-600 text-white">Create Post</Button>
       <Switch />
+      
 
         </div>
-
+        
+        
         <Switch className="lg:hidden" />
+        <FaSearch onClick={()=>setShowSearch(search=>!search)} size={20} className="text-blue-400 lg:hidden cursor-pointer" />
+        
+
+        
+
+
 
         <button 
         type="button"
@@ -104,6 +117,19 @@ function Navbar() {
 
   </div>
 )}
+
+{showSearch && (
+  <div className="absolute lg:hidden  bg-white/80 backdrop-blur-2xl p-2 border border-b-blue-300  top-full mx-2 my-1 left-0 right-0 rounded-lg ">
+    <div className=" flex px-2">
+      <input type="text"
+      placeholder="Search developers, opportunities and others"
+       className="w-full  outline-none text-xs p-1" />
+       <FaArrowCircleRight size={20} className="text-blue-500 hover:text-blue-600"/>
+    </div>
+
+  </div>
+)
+}
 
 
         
