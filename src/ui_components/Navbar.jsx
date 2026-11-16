@@ -20,7 +20,7 @@ function Navbar() {
     ]
   return (
     <>
-    <nav className='fixed z-50 top-0 bg-white\60 backdrop-blur-3xl justify-between p-2 items-center right-0 left-0  flex gap-6'>
+    <nav className='fixed z-50 top-0 bg-white\80 backdrop-blur-3xl justify-between p-2 items-center right-0 left-0  flex gap-6'>
         <a href="/" className='relative text-2xl flex gap-2 items-center justify-center text-gradient font-bold text-blue-500'>Devfolio
 
        <div className="relative bg-blue-500 rounded-full flex items-center justify-center w-2 h-2">
@@ -119,7 +119,7 @@ function Navbar() {
 )}
 
 {showSearch && (
-  <div className="absolute lg:hidden  bg-white/80 backdrop-blur-2xl p-2 border border-b-blue-300  top-full mx-2 my-1 left-0 right-0 rounded-lg ">
+  <div className="absolute lg:hidden  bg-white backdrop-blur-3xl p-2 border border-b-blue-300  top-full mx-2 my-1 left-0 right-0 rounded-lg ">
     <div className=" flex px-2">
       <input type="text"
       placeholder="Search developers, opportunities and others"

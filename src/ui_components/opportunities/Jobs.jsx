@@ -225,7 +225,7 @@ function Jobs() {
                       {job.title}
                     </h3>
 
-                    <div className="lg:flex lg:flex-wrap grid grid-cols-2 gap-x-4 gap-y-2 mt-3 text-xs text-slate-500">
+                    <div className="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-slate-500">
 
                       <span className="flex items-center gap-2">
                         <FaBriefcase /> {job.type}
