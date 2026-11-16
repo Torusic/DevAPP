@@ -133,7 +133,7 @@ function Jobs() {
         </div>
 
         {/* Insights */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+{  /**       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
 
           {[
             { label: 'Opportunities', value: jobs.length, detail: 'Currently listed' },
@@ -147,7 +147,7 @@ function Jobs() {
             </div>
           ))}
 
-        </div>
+        </div>*/}
 
         {/* Job discovery */}
         <div className="mt-12">
@@ -190,7 +190,7 @@ function Jobs() {
           </div>
 
           {/* Listings */}
-          <div className="space-y-4">
+          <div className="space-y-2">
 
             {filteredJobs.map(job => (
 
@@ -225,7 +225,7 @@ function Jobs() {
                       {job.title}
                     </h3>
 
-                    <div className="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-slate-500">
+                    <div className="lg:flex lg:flex-wrap grid grid-cols-2 gap-x-4 gap-y-2 mt-3 text-xs text-slate-500">
 
                       <span className="flex items-center gap-2">
                         <FaBriefcase /> {job.type}
