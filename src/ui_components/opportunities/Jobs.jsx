@@ -87,7 +87,7 @@ function Jobs() {
   }
 
   return (
-    <section className="min-h-screen bg-[#F8FAFC] px-5 py-8 md:px-10 lg:px-16">
+    <section className="min-h-screen bg-[#F8FAFC] px-5 py-2 md:px-10 lg:px-16 rounded-lg">
 
       <div className="max-w-7xl mx-auto">
 
@@ -133,14 +133,14 @@ function Jobs() {
         </div>
 
         {/* Insights */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
 
           {[
             { label: 'Opportunities', value: jobs.length, detail: 'Currently listed' },
             { label: 'Remote positions', value: jobs.filter(j => j.type === 'Remote').length, detail: 'Work from anywhere' },
             { label: 'Saved jobs', value: saved.length, detail: 'Your shortlist' }
           ].map(stat => (
-            <div key={stat.label} className="bg-white border-2 border-purple-200  rounded-2xl p-5">
+            <div key={stat.label} className="bg-white border border-purple-100  rounded-2xl p-5">
               <p className="text-sm text-slate-500">{stat.label}</p>
               <h2 className="text-2xl font-bold text-slate-900 mt-2">{stat.value}</h2>
               <p className="text-xs text-slate-400 mt-1">{stat.detail}</p>
