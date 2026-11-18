@@ -10,6 +10,7 @@ import {
   FaRocket,
   FaArrowRight
 } from 'react-icons/fa'
+import { IoAdd } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 function Create() {
@@ -74,7 +75,7 @@ function Create() {
               <span className="text-xs md:text-sm font-semibold text-slate-700 flex-1">
                 {item.title}
               </span>
-              <p className='text-xs text-slate-500'>Create {item.title} </p>
+              <p className='text-xs p-2 text-slate-500 flex items-center gap-2'>Create <IoAdd/> </p>
 
               </div>
 
