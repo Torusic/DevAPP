@@ -101,7 +101,7 @@ function Opportunity() {
           onClick={()=>setCategory(item)}
           className={`${category===item ? ' bg-violet-200 scale-105':'bg-slate-50'}
          
-           cursor-pointer font-medium  border border-violet-100  text-slate-700 text-gradient text-xs lg:text-md md:text-sm  py-2  px-4 rounded-full`}
+           cursor-pointer font-medium  border border-violet-100  text-slate-700 text-gradient text-xs lg:text-md md:text-sm  p-2   rounded-full`}
           >
             {item}
 
