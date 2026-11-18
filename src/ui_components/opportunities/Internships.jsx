@@ -174,7 +174,7 @@ function Internships() {
                                             </span>
 
                                         </div>
-                                        <div className="mt-4 flex flex-wrap border-t border-t-violet-200 p-2 items-center justify-between">
+                                        <div className="mt-4 flex  border-t border-t-violet-200 p-2 items-center justify-between">
 
                                             <span className="lg:text-sm text-xs font-semibold text-slate-800">
                                                 {intern.salary}
