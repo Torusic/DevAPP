@@ -174,17 +174,7 @@ function Internships() {
                                             </span>
 
                                         </div>
-                                        <div className="mt-4 flex  border-t border-t-violet-200 p-2 items-center justify-between">
 
-                                            <span className="lg:text-sm text-xs font-semibold text-slate-800">
-                                                {intern.salary}
-                                            </span>
-
-                                        <button className="flex items-center gap-2 lg:text-sm text-xs font-semibold bg-violet-100 p-2 rounded-full text-violet-600 hover:text-violet-700">
-                                            View details 
-                                        </button>
-
-                                      </div>
 
 
 
@@ -203,6 +193,17 @@ function Internships() {
                                     
 
                                 </div>
+                                    <div className="mt-4 flex flex-wrap border-t border-t-violet-200 p-2 items-center justify-between">
+
+                                            <span className="lg:text-sm flex  items-center text-xs  font-semibold text-slate-500">
+                                              Salary:  <h5 className='text-slate-800 text-xs ml-2'>{intern.salary}</h5>
+                                            </span>
+
+                                        <button className="flex items-center gap-2 lg:text-sm text-xs font-semibold bg-violet-100 p-2 rounded-full text-violet-600 hover:text-violet-700">
+                                            View details 
+                                        </button>
+
+                                      </div>
 
                             </article>
                         ))

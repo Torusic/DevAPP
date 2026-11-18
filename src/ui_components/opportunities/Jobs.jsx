@@ -232,17 +232,6 @@ function Jobs() {
 
                     </div>
 
-                    <div className="mt-4 flex flex-wrap border-t border-t-indigo-200 p-2 items-center justify-between">
-
-                      <span className="lg:text-sm text-xs font-semibold text-slate-800">
-                        {job.salary}
-                      </span>
-
-                  <button className="flex items-center gap-2 lg:text-sm text-xs font-semibold bg-indigo-100 p-2 rounded-full text-indigo-600 hover:text-indigo-700">
-                    View details 
-                  </button>
-
-                    </div>
 
                   </div>
 
@@ -258,6 +247,19 @@ function Jobs() {
                   </button>
 
                 </div>
+                
+                    <div className="mt-4 flex flex-wrap border-t border-t-indigo-200 p-2 items-center justify-between">
+
+                    <span className="lg:text-sm flex  items-center text-xs  font-semibold text-slate-500">
+                      Salary:  <h5 className='text-slate-800 text-sm ml-2'>{job.salary}</h5>
+                    </span>
+
+
+                  <button className="flex items-center gap-2 lg:text-sm text-xs font-semibold bg-indigo-100 p-2 rounded-full text-indigo-600 hover:text-indigo-700">
+                    View details 
+                  </button>
+
+                    </div>
 
                
 
