@@ -71,7 +71,7 @@ function Internships() {
 
 
   return (
-    <section className='min-h-screen bg-violet-50 top-0 rounded-2xl px-5 py-2 md:px-10 lg:px-16'>
+    <section className='min-h-screen  bg-violet-50 rounded-2xl px-5 py-2 md:px-10 lg:px-16'>
         <div className='max-w-7xl mx-auto'>
             <p className='lg:text-2xl text-lg font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent text-gradient p-2 '>Internships</p>
 

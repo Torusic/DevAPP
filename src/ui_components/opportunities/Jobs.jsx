@@ -112,8 +112,8 @@ function Jobs() {
 
             
 
-            <button className="bg-indigo-500 text-white p-2 rounded-lg lg:text-sm text-xs font-semibold transition">
-              search
+            <button className=" text-white p-2 rounded-lg lg:text-sm text-xs font-semibold transition">
+              
             </button>
 
           </div>
