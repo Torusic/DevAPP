@@ -87,12 +87,12 @@ function Jobs() {
   }
 
   return (
-    <section className="min-h-screen bg-[#F8FAFC] px-5 py-2 md:px-10 lg:px-16 rounded-lg">
+    <section className="min-h-screen bg-blue-50 px-5 py-2 md:px-10 lg:px-16 rounded-lg">
 
       <div className="max-w-7xl mx-auto">
 
         {/* Page heading */}
-       <p className='font-bold text-2xl text-gradient p-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>Jobs</p>
+       <p className='font-bold lg:text-2xl text-lg text-gradient p-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>Jobs</p>
 
         {/* Search panel */}
         <div className="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
@@ -100,15 +100,15 @@ function Jobs() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3">
 
             <div className="flex items-center gap-3 px-4">
-                <div className='bg-purple-100 p-2 rounded-lg'>
-                    <FaSearch className="text-purple-400 " />   
+                <div className='bg-blue-100 p-2 rounded-lg'>
+                    <FaSearch className="text-blue-400 " />   
                 </div>
               
               <input
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="Job title, skill or company"
-                className="w-full py-3 outline-none bg-gray-100 p-2 rounded-lg text-sm text-slate-700"
+                className="w-full py-3 outline-none bg-gray-100 p-2 rounded-lg lg:text-sm text-xs text-slate-700"
               />
             </div>
 
@@ -121,11 +121,11 @@ function Jobs() {
                 value={location}
                 onChange={e => setLocation(e.target.value)}
                 placeholder="Location or remote"
-                className="w-full py-3 outline-none text-sm bg-gray-100 p-2 rounded-lg text-sm text-slate-700"
+                className="w-full py-3 outline-none  bg-gray-100 p-2 rounded-lg lg:text-sm text-xs text-slate-700"
               />
             </div>
 
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-xl text-sm font-semibold transition">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-xl text-sm font-semibold transition">
               Search jobs
             </button>
 
@@ -155,10 +155,10 @@ function Jobs() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 
             <div>
-              <h2 className="text-xl font-bold text-slate-900">
+              <h2 className="lg:text-xl text-md font-bold text-slate-900">
                 Explore opportunities
               </h2>
-              <p className="text-sm text-slate-500 mt-1">
+              <p className="lg:text-sm text-sm text-slate-500 mt-1">
                 Find a role that matches your skills and ambitions.
               </p>
             </div>
@@ -177,9 +177,9 @@ function Jobs() {
               <button
                 key={item}
                 onClick={() => setCategory(item)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                className={`px-4 py-2 text-xs rounded-full text-sm font-medium transition ${
                   category === item
-                    ? 'bg-purple-600 text-white'
+                    ? 'bg-blue-500 text-white'
                     : 'bg-white border border-slate-200 text-slate-600 hover:border-blue-300'
                 }`}
               >
@@ -221,7 +221,7 @@ function Jobs() {
 
                     </div>
 
-                    <h3 className="font-bold text-lg text-slate-900">
+                    <h3 className="font-bold lg:text-lg text-sm text-slate-900">
                       {job.title}
                     </h3>
 
@@ -247,7 +247,7 @@ function Jobs() {
 
                     <div className="mt-4 flex flex-wrap items-center gap-3">
 
-                      <span className="text-sm font-semibold text-slate-800">
+                      <span className="lg:text-sm text-xs font-semibold text-blue-400">
                         {job.salary}
                       </span>
 
@@ -278,7 +278,7 @@ function Jobs() {
                     Posted {job.posted}
                   </span>
 
-                  <button className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700">
+                  <button className="flex items-center gap-2 lg:text-sm text-xs font-semibold text-blue-600 hover:text-blue-700">
                     View details 
                   </button>
 
