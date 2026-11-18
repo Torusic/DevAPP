@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import {
   FaBriefcase,
   FaGraduationCap,
@@ -11,6 +11,18 @@ import {
 import { Link } from 'react-router-dom'
 
 function Opportunity() {
+  const[search,setSearch]=useState('')
+  const[category,setCategory]=useState('All')
+  const categoryColors = {
+  All: 'bg-violet-300 text-black',
+  Jobs: 'bg-blue-200 text-blue-800',
+  Internships: 'bg-purple-200 text-purple-800',
+  Freelance: 'bg-emerald-200 text-emerald-800',
+  Hackathons: 'bg-orange-200 text-orange-800',
+  Collaborations: 'bg-pink-200 text-pink-800',
+  Startups: 'bg-cyan-200 text-cyan-800'
+}
+  
   const opportunity = [
     {
       title: 'Jobs',
@@ -57,6 +69,14 @@ function Opportunity() {
       color: 'text-cyan-600'
     }
   ]
+  const categories=['All', 'Jobs','Internships','Freelance','Hackathons','Collaborations','Startups']
+  const filterOpportunities=opportunity.filter(opp=>{
+    
+    const matchesCategory=
+    category==='All' || opp.title === category
+
+    return matchesCategory
+  })
 
   return (
     <section className="min-h-screen bg-slate-50 top-0 px-5 py-5 md:px-10 py-2 lg:px-16 rounded-lg">
@@ -74,11 +94,29 @@ function Opportunity() {
           the next step in your developer journey.
         </p>
       </div>
+      <div className='flex items-center mb-8 flex-wrap px-5  gap-2 '>
+        {categories.map((item)=>(
+          <button
+          key={item}
+          onClick={()=>setCategory(item)}
+          className={`${category===item ? ' scale-105':'bg-slate-50'}
+          ${categoryColors[item]}
+           cursor-pointer font-medium text-slate-700 border text-gradient text-xs lg:text-md md:text-sm border-violet-200 p-2 rounded-full`}
+          >
+            {item}
+
+          </button>
+        ))
+      }
+
+
+      </div>
+      
 
       {/* Opportunity Cards */}
       <div className="max-w-6xl mx-auto backdrop-blur-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        {opportunity.map((opp) => (
+        {filterOpportunities.map((opp) => (
           <div
             key={opp.title}
             className={`group relative overflow-hidden bg-gradient-to-br ${opp.bg}
