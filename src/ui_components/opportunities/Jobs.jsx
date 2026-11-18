@@ -208,7 +208,7 @@ function Jobs() {
 
                     </div>
 
-                    <h3 className="font-bold lg:text-lg text-sm text-slate-900">
+                    <h3 className="font-bold lg:text-lg text-xs text-slate-900">
                       {job.title}
                     </h3>
 

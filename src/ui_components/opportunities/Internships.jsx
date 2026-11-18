@@ -149,7 +149,7 @@ function Internships() {
                                             <span className='text-xs font-mdeium text-slate-500'>{intern.company}</span>
                                             {
                                                 intern.featured &&(
-                                                    <span className='text-xs font-semibold text-violet-600 bg-blue-50 px-2 py-1 rounded-md'>
+                                                    <span className='text-xs font-semibold text-violet-600 bg-violet-100 px-2 py-1 rounded-md'>
                                                         featured</span>
                                                 )
                                             }
