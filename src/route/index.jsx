@@ -2,6 +2,7 @@
 import App from "@/App";
 import Bar from "@/ui_components/Bar";
 import Header from "@/ui_components/Header";
+import Internships from "@/ui_components/opportunities/Internships";
 import Jobs from "@/ui_components/opportunities/Jobs";
 import Opportunity from "@/ui_components/Opportunity";
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
           {
             path: "opportunities/jobs",
             element: <Jobs />,
+          },
+                    {
+            path: "opportunities/internships",
+            element: <Internships />,
           },
         ],
       },

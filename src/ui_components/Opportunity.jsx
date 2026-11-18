@@ -25,7 +25,8 @@ function Opportunity() {
       description: 'Gain practical experience, develop industry-ready skills and grow your career.',
       icon: <FaGraduationCap />,
       bg: 'from-purple-50 to-violet-200',
-      color: 'text-purple-600'
+      color: 'text-purple-600',
+      to:'/opportunities/internships'
     },
     {
       title: 'Freelance',

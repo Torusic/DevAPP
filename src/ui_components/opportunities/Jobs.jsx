@@ -87,7 +87,7 @@ function Jobs() {
   }
 
   return (
-    <section className="min-h-screen bg-blue-50 px-5 py-2 md:px-10 lg:px-16 rounded-lg">
+    <section className="min-h-screen bg-indigo-50 px-5 py-2 md:px-10 lg:px-16 rounded-lg">
 
       <div className="max-w-7xl mx-auto">
 
@@ -100,8 +100,8 @@ function Jobs() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3">
 
             <div className="flex items-center gap-3 px-4">
-                <div className='bg-blue-100 p-2 rounded-lg'>
-                    <FaSearch className="text-blue-400 " />   
+                <div className='bg-indigo-100 p-2 rounded-lg'>
+                    <FaSearch className="text-indigo-400 " />   
                 </div>
               
               <input
@@ -113,8 +113,8 @@ function Jobs() {
             </div>
 
             <div className="flex items-center gap-3 px-4 border-t md:border-t-0 md:border-l border-slate-100">
-                <div className='bg-blue-100 p-2 rounded-lg'>
-                    <FaMapMarkerAlt className="text-blue-400" />
+                <div className='bg-indigo-100 p-2 rounded-lg'>
+                    <FaMapMarkerAlt className="text-indigo-400" />
                 </div>
               
               <input
@@ -125,7 +125,7 @@ function Jobs() {
               />
             </div>
 
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-xl text-sm font-semibold transition">
+            <button className="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-3 rounded-xl lg:text-sm text-xs font-semibold transition">
               Search jobs
             </button>
 
@@ -179,8 +179,8 @@ function Jobs() {
                 onClick={() => setCategory(item)}
                 className={`px-4 py-2 text-xs rounded-full text-sm font-medium transition ${
                   category === item
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-white border border-slate-200 text-slate-600 hover:border-blue-300'
+                    ? 'bg-indigo-500 text-white'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-colors duration-500'
                 }`}
               >
                 {item}
