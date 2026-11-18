@@ -11,6 +11,7 @@ import {
   FaArrowRight
 } from 'react-icons/fa'
 import { IoAdd } from 'react-icons/io5'
+import { LuSquareArrowOutUpRight } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
 
 function Create() {
@@ -94,11 +95,11 @@ function Create() {
     Create Community
   </h2>
 
-  <button className="w-full bg-gradient-to-r cursor-pointer from-purple-100 to-purple-200 shadow hover:bg-purple-200 border border-purple-200 p-3 rounded-xl my-2 text-left transition-all">
+  <button className="w-full bg-gradient-to-r cursor-pointer border from-purple-100 to-purple-200 shadow hover:bg-purple-200 border-purple-300 p-3 rounded-xl my-2 text-left transition-all">
     <p className="text-xs md:text-sm text-gray-600 leading-5">
       Connect with fellow developers, share ideas and grow together.
-      <span className="block font-semibold text-purple-700 mt-1">
-        Join or create a community around your interests →
+      <span className=" font-semibold flex items-center justify-between pr-5 text-purple-700 mt-1">
+        Create or Join a community <p className='text-lg font-bold' > <LuSquareArrowOutUpRight /></p>
       </span>
     </p>
   </button>
