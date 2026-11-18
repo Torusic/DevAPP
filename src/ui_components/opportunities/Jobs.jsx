@@ -63,19 +63,17 @@ function Jobs() {
     }
   ]
 
-  const categories = ['All', 'FullStack', 'Frontend', 'Backend','IoT']
+  const categories = ['All', 'FullStack', 'Frontend', 'Backend']
 
   const filteredJobs = jobs.filter(job => {
     const matchesSearch=
-    `${job.title}${job.company}`.toLowerCase().includes(search.toLowerCase())
+    `${job.title}${job.company}${job.location}`.toLowerCase().includes(search.toLowerCase())
 
-    const matchesLocation =
-      job.location.toLowerCase().includes(location.toLowerCase())
 
     const matchesCategory =
       category === 'All' || job.category === category
 
-    return matchesSearch && matchesLocation && matchesCategory
+    return matchesSearch  && matchesCategory
   })
 
   const toggleSave = (id) => {
@@ -87,7 +85,7 @@ function Jobs() {
   }
 
   return (
-    <section className="min-h-screen  bg-indigo-50 px-5 py-2 md:px-10 lg:px-16 rounded-lg">
+    <section className="min-h-screen bg-indigo-50 px-5 py-2 md:px-10 lg:px-16 rounded-lg">
 
       <div className="max-w-7xl mx-auto">
 
@@ -95,9 +93,9 @@ function Jobs() {
        <p className='font-bold lg:text-2xl text-lg text-gradient p-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>Jobs</p>
 
         {/* Search panel */}
-        <div className="bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-2xl p-3 shadow-sm">
+        <div className="bg-white/80 backdrop-blur-3xl border border-indigo-200 rounded-2xl p-3 shadow-sm">
 
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3">
+          <div className="flex md:grid-cols-[1fr_1fr_auto] gap-3">
 
             <div className="flex items-center gap-3 px-4">
                 <div className='bg-indigo-100 p-2 rounded-lg'>
@@ -107,26 +105,15 @@ function Jobs() {
               <input
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                placeholder="Job title, skill or company"
-                className="w-full py-3 outline-none bg-gray-100 p-2 rounded-lg lg:text-sm text-xs text-slate-700"
+                placeholder="Job title, company or location"
+                className="w-full  outline-none  p-2 rounded-lg lg:text-sm text-xs text-slate-700"
               />
             </div>
 
-            <div className="flex items-center gap-3 px-4 border-t md:border-t-0 md:border-l border-slate-100">
-                <div className='bg-indigo-100 p-2 rounded-lg'>
-                    <FaMapMarkerAlt className="text-indigo-400" />
-                </div>
-              
-              <input
-                value={location}
-                onChange={e => setLocation(e.target.value)}
-                placeholder="Location or remote"
-                className="w-full py-3 outline-none  bg-gray-100 p-2 rounded-lg lg:text-sm text-xs text-slate-700"
-              />
-            </div>
+            
 
-            <button className="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-3 rounded-xl lg:text-sm text-xs font-semibold transition">
-              Search jobs
+            <button className="bg-indigo-500 text-white p-2 rounded-lg lg:text-sm text-xs font-semibold transition">
+              search
             </button>
 
           </div>
@@ -171,17 +158,22 @@ function Jobs() {
           </div>
 
           {/* Categories */}
-          <div className="overflow-x-auto">
-            <div className="flex gap-3 w-max">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  className="shrink-0 px-5 py-2 rounded-full"
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+          <div className="flex gap-2 flex-wrap mb-6">
+
+            {categories.map(item => (
+              <button
+                key={item}
+                onClick={() => setCategory(item)}
+                className={`px-4 py-2 text-xs rounded-full  font-medium transition ${
+                  category === item
+                    ? 'bg-indigo-500 text-white'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-colors duration-500'
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+
           </div>
 
           {/* Listings */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaSearch,} from 'react-icons/fa'
 
 function Internships() {
 
@@ -70,9 +71,30 @@ function Internships() {
 
 
   return (
-    <section className='min-h-screen bg-violet-50 rounded-2xl px-5 py-2 md:px-10 lg:px-16'>
+    <section className='min-h-screen bg-violet-50 top-0 rounded-2xl px-5 py-2 md:px-10 lg:px-16'>
         <div className='max-w-7xl mx-auto'>
             <p className='lg:text-2xl text-lg font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent text-gradient p-2 '>Internships</p>
+
+            <div className='bg-white p-2 border border-violet-200 rounded-2xl shadow-2xs'>
+                <div className='grid grid-cols-1 md:grid-cols-[1fr_1fr_auto]'>
+                    <div className='flex items-center gap-3 px-4'>
+                        <div className='bg-violet-100 p-2 rounded-lg'>
+                            <FaSearch/>
+                        </div>
+                        <input
+                        value={search}
+                        onChange={e=>setSearch(e.target.value)}
+                        placeholder='Internship title, skill or company'
+                        className='text-xs w-full p-2 outline-none'
+                         type="text" />
+
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
