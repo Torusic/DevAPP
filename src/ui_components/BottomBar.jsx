@@ -27,8 +27,8 @@ function BottomBar() {
                     key={side.name}
                     to={side.href}
                     onClick={()=>setActive(side.name)}
-                    className={`  flex items-center justify-between   px-2 space-x-2 rounded-xs ${isActive ?"bg-blue-100 rounded-full":"hover:bg-blue-50 cursor-pointer "}`}>
-                        <p className='p-2 text-blue-600 '>{side.icon}</p>
+                    className={`  flex items-center justify-between   px-2 space-x-2 rounded-xs ${isActive ?"bg-violet-100 rounded-full":"hover:bg-violet-50 cursor-pointer "}`}>
+                        <p className='p-2 text-violet-600 '>{side.icon}</p>
                         {/**<p className='p-2 font-semibold text-xs bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent  '>{side.name}</p>*/}
 
                     </Link>
