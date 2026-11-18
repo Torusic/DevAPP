@@ -27,7 +27,7 @@ function Jobs() {
       location: 'Nairobi',
       experience: 'Entry Level',
       salary: 'KSh 40k – 70k',
-      category: 'Engineering',
+      category: 'FullStack',
       posted: '2d ago',
       logo: 'T',
       color: 'bg-blue-600',
@@ -63,7 +63,7 @@ function Jobs() {
     }
   ]
 
-  const categories = ['All', 'Engineering', 'Frontend', 'Backend']
+  const categories = ['All', 'FullStack', 'Frontend', 'Backend']
 
   const filteredJobs = jobs.filter(job => {
     const matchesSearch=
@@ -92,10 +92,10 @@ function Jobs() {
       <div className="max-w-7xl mx-auto">
 
         {/* Page heading */}
-       <p className='font-bold lg:text-2xl text-lg text-gradient p-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>Jobs</p>
+       <p className='font-bold lg:text-2xl text-lg text-gradient p-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>Jobs</p>
 
         {/* Search panel */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm">
+        <div className="bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-2xl p-3 shadow-sm">
 
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3">
 
