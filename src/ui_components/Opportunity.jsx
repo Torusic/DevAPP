@@ -82,7 +82,7 @@ function Opportunity() {
     <section className="min-h-screen bg-slate-50 top-0 px-5 py-5 md:px-10 py-2 lg:px-16 rounded-lg">
 
       {/* Header */}
-      <div className="max-w-3xl mx-auto text-center mb-12">
+      <div className="max-w-7xl mx-auto text-center mb-12">
 
 
         <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent  tracking-tight">
