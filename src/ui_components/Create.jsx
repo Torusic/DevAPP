@@ -38,6 +38,7 @@ function Create() {
         </div>
 
         {/* Community Post */}
+        <h1 className='font-bold text-md text-gradient lg:text-lg text-gray-600 p-2 mb-3'>Normal Blog</h1>
         <Link
           to="/create/post"
           className="flex items-center gap-3 p-3 mb-4 bg-white border border-violet-200 rounded-xl hover:border-violet-400 transition"
@@ -45,8 +46,10 @@ function Create() {
           <div className="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center">
             <FaPenFancy />
           </div>
+          
 
           <div className="flex-1">
+            
             <h2 className="text-sm font-semibold text-slate-800">
               What's on your mind?
             </h2>
@@ -59,8 +62,9 @@ function Create() {
         </Link>
 
         {/* Opportunity Types */}
+        <h1 className='font-bold text-md lg:text-lg text-gray-600 p-2 mt-6 mb-3 text-gradient'>Create Opportunities</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-
+         
           {options.map((item) => (
             <Link
               key={item.title}
@@ -75,7 +79,7 @@ function Create() {
               <span className="text-xs md:text-sm font-semibold text-slate-700 flex-1">
                 {item.title}
               </span>
-              <p className='text-xs p-2 text-slate-500 flex items-center gap-2'>Create <IoAdd/> </p>
+             
 
               </div>
 
