@@ -89,6 +89,20 @@ function Create() {
           ))}
 
         </div>
+        <div className="mt-6 px-2 ">
+  <h2 className="font-bold text-lg md:text-xl text-gray-700">
+    Create Community
+  </h2>
+
+  <button className="w-full bg-gradient-to-r cursor-pointer from-purple-100 to-purple-200 shadow hover:bg-purple-200 border border-purple-200 p-3 rounded-xl my-2 text-left transition-all">
+    <p className="text-xs md:text-sm text-gray-600 leading-5">
+      Connect with fellow developers, share ideas and grow together.
+      <span className="block font-semibold text-purple-700 mt-1">
+        Join or create a community around your interests →
+      </span>
+    </p>
+  </button>
+</div>
 
       </div>
     </section>
