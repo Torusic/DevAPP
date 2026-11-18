@@ -94,14 +94,14 @@ function Opportunity() {
           the next step in your developer journey.
         </p>
       </div>
-      <div className='flex items-center mb-8 flex-wrap px-5  gap-2 '>
+      <div className='flex items-center mb-6 flex-wrap px-5  gap-2 '>
         {categories.map((item)=>(
           <button
           key={item}
           onClick={()=>setCategory(item)}
-          className={`${category===item ? ' scale-105':'bg-slate-50'}
-          ${categoryColors[item]}
-           cursor-pointer font-medium  shadow-xs  text-gradient text-xs lg:text-md md:text-sm  p-2 rounded-full`}
+          className={`${category===item ? ' bg-violet-200 scale-105':'bg-slate-50'}
+         
+           cursor-pointer font-medium  border border-violet-100  text-slate-700 text-gradient text-xs lg:text-md md:text-sm  py-2  px-4 rounded-full`}
           >
             {item}
 
