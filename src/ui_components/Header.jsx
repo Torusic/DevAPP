@@ -15,14 +15,14 @@ function Header() {
 
   },[images.length])
   return (
-    <section className='max-container section-padding  mb-6'>
+    <section className='max-w-7xl section-padding  mb-6'>
     <p className='text-center text-lg lg:text-xl text-gray-600  mb-3  mx-1'>
     <span className='font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent'>
       Welcome to Devfolio
     </span>{' '}
     — your developer identity, all in one place.
   </p>
-        <div className='relative  w-full h-[220px] lg:h-[400px] overflow-hidden rounded-xl px-4'>
+        <div className='relative  w-full h-[220px] lg:h-[400px] md:h-[500px] overflow-hidden rounded-xl px-4'>
           {images.map((img,index)=>(
             <img 
             key={index}
