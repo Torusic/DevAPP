@@ -14,12 +14,12 @@ function Opportunity() {
   const[search,setSearch]=useState('')
   const[category,setCategory]=useState('All')
   const categoryColors = {
-  All: 'bg-violet-300 text-black',
-  Jobs: 'bg-blue-200 text-blue-800',
-  Internships: 'bg-purple-200 text-purple-800',
-  Freelance: 'bg-emerald-200 text-emerald-800',
-  Hackathons: 'bg-orange-200 text-orange-800',
-  Collaborations: 'bg-pink-200 text-pink-800',
+  All: 'bg-violet-300 text-violet-800 border border-violet-100',
+  Jobs: 'bg-blue-200 text-blue-800 border border-blue-100',
+  Internships: 'bg-purple-200 text-purple-800 border border-purple-100',
+  Freelance: 'bg-emerald-200 text-emerald-800 border border-emerald-100',
+  Hackathons: 'bg-orange-200 text-orange-800 border border-orange-100',
+  Collaborations: 'bg-pink-200 text-pink-800 border border-pink-100',
   Startups: 'bg-cyan-200 text-cyan-800'
 }
   
@@ -101,7 +101,7 @@ function Opportunity() {
           onClick={()=>setCategory(item)}
           className={`${category===item ? ' scale-105':'bg-slate-50'}
           ${categoryColors[item]}
-           cursor-pointer font-medium text-slate-700 border text-gradient text-xs lg:text-md md:text-sm border-violet-200 p-2 rounded-full`}
+           cursor-pointer font-medium  shadow-xs  text-gradient text-xs lg:text-md md:text-sm  p-2 rounded-full`}
           >
             {item}
 
