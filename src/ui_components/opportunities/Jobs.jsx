@@ -214,7 +214,7 @@ function Jobs() {
                       </span>
 
                       {job.featured && (
-                        <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">
+                        <span className="text-xs font-semibold text-indigo-600 bg-blue-50 px-2 py-1 rounded-md">
                           Featured
                         </span>
                       )}
@@ -247,7 +247,7 @@ function Jobs() {
 
                     <div className="mt-4 flex flex-wrap items-center gap-3">
 
-                      <span className="lg:text-sm text-xs font-semibold text-blue-400">
+                      <span className="lg:text-sm text-xs font-semibold text-indigo-500">
                         {job.salary}
                       </span>
 
