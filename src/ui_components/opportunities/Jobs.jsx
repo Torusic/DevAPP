@@ -171,7 +171,7 @@ function Jobs() {
           </div>
 
           {/* Categories */}
-          <div className="flex gap-2  mb-6">
+          <div className="flex gap-2  mb-6 overflow-x-hidden">
 
             {categories.map(item => (
               <button
