@@ -93,7 +93,7 @@ function Jobs() {
        <p className='font-bold lg:text-2xl text-lg text-gradient p-3 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>Jobs</p>
 
         {/* Search panel */}
-        <div className="bg-white/80 backdrop-blur-3xl border border-indigo-200 rounded-2xl p-3 shadow-sm">
+        <div className="bg-white/80 backdrop-blur-3xl border border-indigo-200 rounded-2xl p-2 shadow-sm">
 
           <div className="flex md:grid-cols-[1fr_1fr_auto] gap-3">
 
