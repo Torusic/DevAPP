@@ -11,29 +11,29 @@ function CreateJob() {
 
 
             </div>
-            <form className='bg-white p-4 mt-2 rounded-lg border border-indigo-200 grid'>
+            <form className='bg-white p-4 mt-6 rounded-lg border border-indigo-200 grid'>
                 <div className=''>
                     <h1 className='font-bold text-sm text-slate-700'>1. Basic Information</h1>
                 <p className='text-slate-500 text-xs p-2'> Start by introducing job opportunity</p>
                 <div className='grid lg:grid-cols-2 md:grid-cols-2'>
-                    <div className='grid 2 p-2 my-1'>
-                    <label className='font-bold my-2 text-slate-700 text-sm text-gradient'>Job title *</label>
+                    <div className='grid 2 p-2 mb-1'>
+                    <label className='font-bold mb-1 text-slate-700 text-sm text-gradient'>Job title *</label>
                     <input
                     placeholder='e.g. Junior Software Developer'
                     className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
                      type="text" />
 
                     </div>
-                    <div className='grid 2 p-2 my-1'>
-                    <label className='font-bold my-2 text-slate-700 text-sm text-gradient'>Company/Organization Name*</label>
+                    <div className='grid 2 p-2 mb-1'>
+                    <label className='font-bold mmb-1 text-slate-700 text-sm text-gradient'>Company/Organization Name*</label>
                     <input
                     placeholder=' Enter Company name'
                     className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
                      type="text" />
 
                     </div>
-                    <div className='grid p-2 my-1'>
-                        <label className='font-bold my-2 text-slate-700 text-sm text-gradient' htmlFor="">Job Category</label>
+                    <div className='grid p-2 mb-1'>
+                        <label className='font-bold mb-1 text-slate-700 text-sm text-gradient' htmlFor="">Job Category</label>
                         <select name="category"
                         required
                         className='border border-indigo-200 text-xs p-2 text-indigo-700 bg-indigo-100 rounded-lg'
@@ -54,8 +54,8 @@ function CreateJob() {
                             
                         </select>
                     </div>
-                 <div className='grid'>
-                <label className='font-bold my-2 text-slate-700 text-sm text-gradient'>Company Website</label>
+                 <div className='grid p-2'>
+                <label className='font-bold mb-1 text-slate-700 text-sm text-gradient'>Company Website</label>
                 <input
                   type="url"
                   name="company_website"
