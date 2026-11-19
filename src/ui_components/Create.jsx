@@ -128,7 +128,7 @@ function Create() {
                             Create Community
                         </button>
 
-                        <Link to={'/community'} className='border border-purple-500 p-3 text-sm font-semibold text-purple-600 cursor-pointer  hover:bg-purple-200'>
+                        <Link to={'/community'} className='border border-purple-600 p-3 text-sm font-semibold text-purple-600 cursor-pointer  hover:bg-purple-200'>
                             Join Community
                         </Link>
 
