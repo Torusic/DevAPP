@@ -12,7 +12,7 @@ function BottomBar() {
         {name:'Home',href:'/home',icon:<IoMdHome size={20} />},
         {name:'Opportunities',href:'/opportunities',icon:<FaBriefcase />},
         {name:'create',href:'/create',icon:<IoMdAddCircleOutline size={35} />},
-        {name:'Developers',href:'/developers',icon:<HiUserGroup />},
+        {name:'Developers',href:'/community',icon:<HiUserGroup />},
         {name:'Profile',href:'/profile',icon:<CgProfile />}
     ]
   return (

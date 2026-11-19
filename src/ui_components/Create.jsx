@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import {
   FaPenFancy,
   FaBriefcase,
@@ -10,11 +10,12 @@ import {
   FaRocket,
   FaArrowRight
 } from 'react-icons/fa'
-import { IoAdd } from 'react-icons/io5'
+import { IoAdd, IoClose } from 'react-icons/io5'
 import { LuSquareArrowOutUpRight } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
 
 function Create() {
+    const[community,setCommunity]=useState(false)
 
   const options = [
     { title: 'Job', icon: <FaBriefcase />, color: 'text-blue-600', bg: 'bg-blue-100', to: '/create/job' },
@@ -95,7 +96,7 @@ function Create() {
     Create Community
   </h2>
 
-  <button className="w-full bg-gradient-to-r cursor-pointer border from-purple-100 via-purple-50 to-purple-200 shadow hover:bg-purple-200 border-purple-300 p-3 rounded-xl my-2 text-left transition-all">
+  <button onClick={()=>setCommunity(prev=>!prev)} className="w-full bg-gradient-to-r cursor-pointer border from-purple-100 via-purple-50 to-purple-200 shadow hover:bg-purple-200 border-purple-300 p-3 rounded-xl my-2 text-left transition-all">
     <p className="text-xs md:text-sm text-gray-600 leading-5">
       Connect with fellow developers, share ideas and grow together.
       <span className=" font-semibold flex items-center justify-between pr-5 text-purple-700 mt-1">
@@ -106,6 +107,39 @@ function Create() {
 </div>
 
       </div>
+
+      {
+        community&&(
+            <div className='p-3 bg-neutral-950/70  backdrop-blur-xs  z-50  bottom-0 top-0 left-0 right-0 fixed  flex items-center justify-center '>
+                <div className='grid bg-white/80    w-full max-w-3xl p-5 rounded-md border border-purple-300'>
+                <div className='flex items-center justify-between'>
+                    <p className='font-bold bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent p-2 '>Developer Community.</p>
+                    <IoClose 
+                    onClick={()=>setCommunity(false)}
+                    className='cursor-pointer text-purple-600' 
+                        
+                        />
+
+                </div>
+                    
+                    <h2 className='mb-4 text-sm p-2 text-gradient text-slate-600'>Want to connect with like-minded developers and exchange ideas ?</h2>
+                    <div className='flex items-center gap-3 mb-4'>
+                        <button className='bg-purple-500 p-3 font-semibold text-white text-sm rounded-md text-gradient cursor-pointer'>
+                            Create Community
+                        </button>
+
+                        <Link to={'/community'} className='border border-purple-500 p-3 text-sm font-semibold text-purple-600 cursor-pointer  hover:bg-purple-200'>
+                            Join Community
+                        </Link>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        )
+      }
     </section>
   )
 }
