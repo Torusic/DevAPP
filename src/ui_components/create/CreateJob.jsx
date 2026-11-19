@@ -71,7 +71,7 @@ function CreateJob() {
                     </div>
                     <div className='bg-white p-3 rounded-2xl'>
                         <h2 className='font-bold lg:text-md text-md text-slate-700'>2. Employment Details</h2>
-                        <div className='grid  lg:justify-between gap-2 p-2'>
+                        <div className='grid lg:grid-cols-2 lg:justify-between gap-2 p-2'>
                             <div className='grid'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Employment Type</label>
                                 <select name="" id="" className='outline-none border border-indigo-100 p-2  rounded-lg bg-gray-100 text-xs'>
@@ -167,7 +167,7 @@ function CreateJob() {
                             </select>
                             <p className='font-bold mb-1 p-2 text-slate-700 lg:text-sm mt-4 text-xs text-gradient'> Salary Range</p>
 
-                            <div className='grid grid-cols-2 gap-2'>
+                            <div className='grid lg:grid-cols-2 gap-2'>
 
 
                                 <div className='grid  px-2 mb-1'>
@@ -321,7 +321,7 @@ function CreateJob() {
                     </div>
 
                     {/* Submit Job */}
-                    <div className="bg-white/70 z-50 backdrop-blur-md    p-4 rounded-xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="bg-white/70 z-50 backdrop-blur-md sticky lg:static bottom-20   p-4 rounded-xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
 
                         <p className="text-xs text-slate-500">
                             Please review all job details before publishing.
