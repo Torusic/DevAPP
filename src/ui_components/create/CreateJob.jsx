@@ -305,7 +305,7 @@ function CreateJob() {
                             </div>
 
                             {/* Application Instructions */}
-                            <div className="grid gap-2 md:col-span-2">
+                            <div className="grid gap-2 mb-50 md:col-span-2">
                                 <label className="font-bold text-sm text-slate-700">
                                     Application Instructions
                                 </label>
