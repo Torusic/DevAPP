@@ -3,6 +3,7 @@ import App from "@/App";
 import Bar from "@/ui_components/Bar";
 import Community from "@/ui_components/Community";
 import Create from "@/ui_components/Create";
+import CreateJob from "@/ui_components/create/CreateJob";
 import Header from "@/ui_components/Header";
 import Internships from "@/ui_components/opportunities/Internships";
 import Jobs from "@/ui_components/opportunities/Jobs";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
           {
             path:'create',
             element:<Create/>
+          },
+          {
+            path:'create/job',
+            element:<CreateJob/>
           },
           {
             path:'community',
