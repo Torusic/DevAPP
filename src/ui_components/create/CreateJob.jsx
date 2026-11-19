@@ -60,7 +60,7 @@ function CreateJob() {
                                     name="description"
                                     rows="5"
                                     placeholder="Describe the role, responsibilities and what the successful candidate will be doing..."
-                                     className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
+                                    className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
                                     required
                                 />
                             </div>
@@ -72,7 +72,7 @@ function CreateJob() {
                     <div className='bg-white p-3 rounded-2xl'>
                         <h2 className='font-bold lg:text-md text-md text-slate-700'>2. Employment Details</h2>
                         <div className='grid grid-cols-2 lg:justify-between gap-2 p-2'>
-                            <div className='grid'> 
+                            <div className='grid'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Employment Type</label>
                                 <select name="" id="" className='outline-none border border-indigo-100 p-2  rounded-lg bg-gray-100 text-xs'>
                                     <option value="">Select Category</option>
@@ -81,22 +81,30 @@ function CreateJob() {
                                     <option value="">Contract</option>
                                     <option value="">Temporary</option>
                                 </select>
-                                
+
 
                             </div>
-                            <div className='grid'> 
+                            <div className='grid'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Work Arrangement</label>
                                 <select name="" id="" className='outline-none border border-indigo-100 p-2  rounded-lg bg-gray-100 text-xs'>
                                     <option value="">Select Category</option>
                                     <option value="">On-site</option>
                                     <option value="">Remote</option>
                                     <option value="">Hybrid</option>
-                                    
+
                                 </select>
 
                             </div>
-                            
+
                         </div>
+                        <div className='grid'>
+                            <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Location</label>
+                            <input
+                                placeholder=' Enter Company name'
+                                className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
+                                type="text" />
+                        </div>
+
 
                     </div>
 
