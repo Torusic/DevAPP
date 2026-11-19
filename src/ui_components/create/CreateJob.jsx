@@ -321,7 +321,7 @@ function CreateJob() {
                     </div>
 
                     {/* Submit Job */}
-                    <div className="bg-white p-4 rounded-xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="bg-white/70 backdrop-blur-md sticky mb-5 bottom-18 p-4 rounded-xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
 
                         <p className="text-xs text-slate-500">
                             Please review all job details before publishing.
