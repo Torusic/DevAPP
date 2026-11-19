@@ -110,7 +110,7 @@ function CreateJob() {
                     <div className='bg-white p-2 rounded-lg'>
                         <h2 className='font-bold mb-1 p-2 text-slate-700 lg:text-md text-md text-gradient'>3. Candidates Requirement</h2>
                         <div className='grid lg:grid-cols-2 md:grid-cols-2 lg:justify-between gap-2 p-2'>
-                            <div className='grid'>
+                            <div className='grid p-2 mb-1''>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Experience Level</label>
                                 <select name="" id="" className='outline-none border border-indigo-100 p-2  rounded-lg bg-gray-100 text-xs'>
                                     <option value="">Entry-level</option>
