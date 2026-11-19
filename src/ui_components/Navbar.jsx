@@ -20,7 +20,7 @@ function Navbar() {
     ]
   return (
     <>
-    <nav className='fixed z-50 top-0 mb-6 bg-white\80 backdrop-blur-3xl justify-between p-3 md:px-6 items-center right-0 left-0  flex gap-6'>
+    <nav className='fixed z-50 top-0 mb-6 bg-white backdrop-blur-3xl justify-between p-3 md:px-6 items-center right-0 left-0  flex gap-6'>
         <a href="/" className='relative text-2xl flex gap-2 items-center justify-center text-gradient font-bold text-blue-500'>Devfolio
 
        <div className="relative bg-blue-500 rounded-full flex items-center justify-center w-2 h-2">
