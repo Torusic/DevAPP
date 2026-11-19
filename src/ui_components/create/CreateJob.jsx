@@ -54,8 +54,8 @@ function CreateJob() {
 
                                 </select>
                             </div>
-                            <div className="grid">
-                                <label className='font-bold mmb-1 text-slate-700 text-sm text-gradient'>Job Description *</label>
+                            <div className="grid  p-2 mb-1">
+                                <label className='font-bold mb-1  text-slate-700 text-sm text-gradient'>Job Description *</label>
                                 <textarea
                                     name="description"
                                     rows="5"
@@ -84,7 +84,7 @@ function CreateJob() {
 
 
                             </div>
-                            <div className='grid'>
+                            <div className='grid  p-2 mb-1'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Work Arrangement</label>
                                 <select name="" id="" className='outline-none border border-indigo-100 p-2  rounded-lg bg-gray-100 text-xs'>
                                     <option value="">Select Category</option>
@@ -97,7 +97,7 @@ function CreateJob() {
                             </div>
 
                         </div>
-                        <div className='grid'>
+                        <div className='grid  p-2 mb-1'>
                             <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Location</label>
                             <input
                                 placeholder=' Enter location'
@@ -123,7 +123,7 @@ function CreateJob() {
 
 
                             </div>
-                            <div className='grid'>
+                            <div className='grid  p-2 mb-1'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Minimum Qualification</label>
                                 <textarea
                                     placeholder="e.g. Bachelor's degree in Computer Science or equivalent..."
@@ -131,7 +131,7 @@ function CreateJob() {
                                     type="text" />
 
                             </div>
-                                                        <div className='grid'>
+                                                        <div className='grid  p-2 mb-1'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Required Skills</label>
                                 <input
                                     placeholder="e.g. React, Python, SQL"
@@ -139,7 +139,7 @@ function CreateJob() {
                                     type="text" />
 
                             </div>
-                             <div className='grid'>
+                             <div className='grid  p-2 mb-1'>
                                 <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Additional Requirements</label>
                                 <textarea
                                     placeholder="e.g. Certifications, portfolio, communication skills..."
