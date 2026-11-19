@@ -261,7 +261,7 @@ function CreateJob() {
                                     type="date"
                                     name="application_deadline"
                                     required
-                                    className="p-3 text-xs outline-none rounded-lg border border-indigo-200"
+                                    className="p-3 text- w-full outline-none rounded-lg border border-indigo-200"
                                 />
                             </div>
 
