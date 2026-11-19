@@ -114,7 +114,7 @@ function Opportunity() {
       
 
       {/* Opportunity Cards */}
-      <div className="max-w-6xl mx-auto backdrop-blur-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto backdrop-blur-2xl mb-50 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {filterOpportunities.map((opp) => (
           <div
