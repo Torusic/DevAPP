@@ -100,11 +100,55 @@ function CreateJob() {
                         <div className='grid'>
                             <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Location</label>
                             <input
-                                placeholder=' Enter Company name'
+                                placeholder=' Enter location'
                                 className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
                                 type="text" />
                         </div>
 
+
+                    </div>
+                    <div className='bg-white p-2 rounded-lg'>
+                        <h2 className='font-bold mb-1 p-2 text-slate-700 lg:text-md text-md text-gradient'>3. Candidates Requirement</h2>
+                        <div className='grid lg:grid-cols-2 md:grid-cols-2 lg:justify-between gap-2 p-2'>
+                            <div className='grid'>
+                                <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Experience Level</label>
+                                <select name="" id="" className='outline-none border border-indigo-100 p-2  rounded-lg bg-gray-100 text-xs'>
+                                    <option value="">Entry-level</option>
+                                    <option value="">Graduate</option>
+                                    <option value="">Junior</option>
+                                    <option value="">Mid-evel</option>
+                                    <option value="">Temporary</option>
+                                    <option value="">Any Other Experience</option>
+                                </select>
+
+
+                            </div>
+                            <div className='grid'>
+                                <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Minimum Qualification</label>
+                                <textarea
+                                    placeholder="e.g. Bachelor's degree in Computer Science or equivalent..."
+                                    className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
+                                    type="text" />
+
+                            </div>
+                                                        <div className='grid'>
+                                <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Required Skills</label>
+                                <input
+                                    placeholder="e.g. React, Python, SQL"
+                                    className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
+                                    type="text" />
+
+                            </div>
+                             <div className='grid'>
+                                <label className='font-bold mb-1 p-2 text-slate-700 lg:text-sm text-xs text-gradient' htmlFor="">Additional Requirements</label>
+                                <textarea
+                                    placeholder="e.g. Certifications, portfolio, communication skills..."
+                                    className='p-2 text-slate-800 text-xs outline-none my-2 rounded-lg border border-indigo-200'
+                                    type="text" />
+
+                            </div>
+
+                        </div>
 
                     </div>
 
