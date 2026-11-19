@@ -124,11 +124,11 @@ function Create() {
                     
                     <h2 className='mb-4 text-sm p-2 text-gradient text-slate-600'>Want to connect with like-minded developers and exchange ideas ?</h2>
                     <div className='flex items-center gap-3 mb-4'>
-                        <button className='bg-purple-500 p-3 font-semibold text-white text-sm rounded-md text-gradient cursor-pointer'>
+                        <button className='bg-purple-500 p-3 font-semibold text-white text-xs rounded-md text-gradient cursor-pointer'>
                             Create Community
                         </button>
 
-                        <Link to={'/community'} className='border border-purple-600 p-3 text-sm font-semibold text-purple-600 cursor-pointer  hover:bg-purple-200'>
+                        <Link to={'/community'} className='border border-purple-600 p-3 text-xs font-semibold text-purple-600 cursor-pointer  hover:bg-purple-200'>
                             Join Community
                         </Link>
 
