@@ -196,7 +196,7 @@ function CreateJob() {
 
                     </div>
 
-                    <div className="bg-white p-4 mb-30 rounded-xl border border-indigo-100">
+                    <div className="bg-white p-4 mb-20 rounded-xl border border-indigo-100">
                         <div className="mb-4">
                             <h2 className="font-bold text-md text-slate-700">
                                 5. Application Details

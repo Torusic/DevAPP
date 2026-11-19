@@ -96,7 +96,7 @@ function Create() {
     Create Community
   </h2>
 
-  <button onClick={()=>setCommunity(prev=>!prev)} className="w-full bg-gradient-to-r mb-50 cursor-pointer border from-purple-100 via-purple-50 to-purple-200 shadow hover:bg-purple-200 border-purple-300 p-3 rounded-xl my-2 text-left transition-all">
+  <button onClick={()=>setCommunity(prev=>!prev)} className="w-full bg-gradient-to-r mb-20 cursor-pointer border from-purple-100 via-purple-50 to-purple-200 shadow hover:bg-purple-200 border-purple-300 p-3 rounded-xl my-2 text-left transition-all">
     <p className="text-xs md:text-sm text-gray-600 leading-5">
       Connect with fellow developers, share ideas and grow together.
       <span className=" font-semibold flex items-center justify-between pr-5 text-purple-700 mt-1">

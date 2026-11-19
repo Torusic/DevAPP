@@ -85,7 +85,7 @@ function Jobs() {
   }
 
   return (
-    <section className="min-h-screen bg-indigo-50 px-5 py-2 md:px-10 lg:px-16 rounded-2xl">
+    <section className="min-h-screen mb-20 bg-indigo-50 px-5 py-2 md:px-10 lg:px-16 rounded-2xl">
 
       <div className="max-w-7xl mx-auto">
 
