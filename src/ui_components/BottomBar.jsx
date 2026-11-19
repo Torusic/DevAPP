@@ -12,11 +12,11 @@ function BottomBar() {
         {name:'Home',href:'/home',icon:<IoMdHome size={20} />},
         {name:'Opportunities',href:'/opportunities',icon:<FaBriefcase />},
         {name:'create',href:'/create',icon:<IoMdAddCircleOutline size={35} />},
-        {name:'Developers',href:'/community',icon:<HiUserGroup />},
+        {name:'Dev. C',href:'/community',icon:<HiUserGroup />},
         {name:'Profile',href:'/profile',icon:<CgProfile />}
     ]
   return (
-    <section className='md:px-4 px-2 md:py-1   h-full lg:hidden flex justify-between items-center sticky  z-100 bottom-7 mx-2 bg-white/95 backdrop-blur-md right-0 left-0  rounded-xl  border-2'>
+    <section className='md:px-4 px-2 md:py-1   h-full lg:hidden flex justify-between items-center sticky  z-100 bottom-0 bg-white/60 backdrop-blur-md right-0 left-0  rounded-xl  border-2'>
         <div className='flex justify-between items-center  p-2 w-full md:w-full'>
             {sidelinks.map((side)=>{
                 const isActive=active===side.name
