@@ -12,7 +12,7 @@ function SideBar() {
         {name:'Home',href:'/home',icon:<IoMdHome  />},
         {name:'Opportunities',href:'/opportunities',icon:<FaBriefcase />},
         {name:'Create Post',href:'/create',icon:<IoMdAddCircleOutline />},
-        {name:'Dev. Community',href:'/developers',icon:<HiUserGroup />},
+        {name:'Dev. Community',href:'/community',icon:<HiUserGroup />},
         {name:'Profile',href:'/profile',icon:<CgProfile />}
     ]
   return (
