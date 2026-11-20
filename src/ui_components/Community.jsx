@@ -286,12 +286,12 @@ function Community() {
 
         <div className="w-full max-w-7xl  overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
 
-          <div className="grid min-h-[650px]   md:grid-cols-3">
+          <div className="grid min-h-[500px]   md:grid-cols-3">
 
             {/* LEFT PANEL */}
 
             <div
-              className={`min-w-0 flex-col border-r z-50 fixed top-20 border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
+              className={`min-w-0 flex-col border-r z-50 sticky top-0 border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
                 }`}
             >
 
@@ -401,7 +401,7 @@ function Community() {
 
                 {displayedCommunities.length > 0 ? (
 
-                  <div className="divide-y p-2 h-[420px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
+                  <div className="divide-y p-2 h-[400px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
 
                     {displayedCommunities.map(community => (
 
