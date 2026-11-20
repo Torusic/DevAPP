@@ -94,8 +94,45 @@ function Community() {
       latest: 'New security discussion.',
       time: 'Today',
       unread: 0
+    },
+    {
+      id: 7,
+      name: 'React Developers',
+      description: 'A community for React developers to learn and share ideas.',
+      avatar: 'R',
+      color: 'bg-blue-100 text-blue-700',
+      members: 245,
+      category: 'Development',
+      latest: 'Anyone working with React 19?',
+      time: '10:24 AM',
+      unread: 3
+    },
+    {
+      id: 8,
+      name: 'React Developers',
+      description: 'A community for React developers to learn and share ideas.',
+      avatar: 'R',
+      color: 'bg-blue-100 text-blue-700',
+      members: 245,
+      category: 'Development',
+      latest: 'Anyone working with React 19?',
+      time: '10:24 AM',
+      unread: 3
+    },
+    {
+      id: 9,
+      name: 'React Developers',
+      description: 'A community for React developers to learn and share ideas.',
+      avatar: 'R',
+      color: 'bg-blue-100 text-blue-700',
+      members: 245,
+      category: 'Development',
+      latest: 'Anyone working with React 19?',
+      time: '10:24 AM',
+      unread: 3
     }
   ])
+
 
   const [messages, setMessages] = useState({
     1: [
@@ -254,9 +291,8 @@ function Community() {
             {/* LEFT PANEL */}
 
             <div
-              className={`min-w-0 flex-col border-r border-slate-100 ${
-                showChat ? 'hidden md:flex' : 'flex'
-              }`}
+              className={`min-w-0 flex-col border-r border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
+                }`}
             >
 
               {/* TABS */}
@@ -271,11 +307,10 @@ function Community() {
                     setCategory('All')
                     setShowChat(false)
                   }}
-                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-2 py-3 text-xs  font-semibold transition ${
-                    activeTab === 'my'
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-2 py-3 text-xs  font-semibold transition ${activeTab === 'my'
                       ? 'bg-indigo-50 text-indigo-700'
                       : 'text-slate-500 hover:bg-slate-50'
-                  }`}
+                    }`}
                 >
                   <FaUsers size={14} />
                   My Communities
@@ -293,11 +328,10 @@ function Community() {
                     setCategory('All')
                     setShowChat(false)
                   }}
-                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-2 py-3 text-xs sm:text-sm font-semibold transition ${
-                    activeTab === 'discover'
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-2 py-3 text-xs sm:text-sm font-semibold transition ${activeTab === 'discover'
                       ? 'bg-indigo-50 text-indigo-700'
                       : 'text-slate-500 hover:bg-slate-50'
-                  }`}
+                    }`}
                 >
                   <FaCompass size={14} />
                   Discover
@@ -307,7 +341,7 @@ function Community() {
 
               {/* SEARCH */}
 
-              <div className="p-3">
+              <div className="p-3 ">
 
                 <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 focus-within:border-indigo-400">
 
@@ -333,11 +367,10 @@ function Community() {
                       key={item}
                       type="button"
                       onClick={() => setCategory(item)}
-                      className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                        category === item
+                      className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition ${category === item
                           ? 'bg-indigo-600 text-white'
                           : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                      }`}
+                        }`}
                     >
                       {item}
                     </button>
@@ -350,7 +383,7 @@ function Community() {
 
               {/* COMMUNITY LIST */}
 
-              <div className="flex-1 min-h-0 overflow-y-auto">
+              <div className="flex-1  ">
 
                 <div className="flex items-center justify-between px-4 py-2">
 
@@ -368,7 +401,7 @@ function Community() {
 
                 {displayedCommunities.length > 0 ? (
 
-                  <div className="divide-y divide-slate-100">
+                  <div className="divide-y  h-[450px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
 
                     {displayedCommunities.map(community => (
 
@@ -378,11 +411,10 @@ function Community() {
                           key={community.id}
                           type="button"
                           onClick={() => openCommunity(community.id)}
-                          className={`flex w-full items-center gap-3 p-4 text-left transition hover:bg-indigo-50 ${
-                            activeCommunity === community.id && showChat
+                          className={`flex w-full items-center gap-3 p-4 text-left transition hover:bg-indigo-50 ${activeCommunity === community.id && showChat
                               ? 'bg-indigo-50'
                               : 'bg-white'
-                          }`}
+                            }`}
                         >
 
                           <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-md font-bold ${community.color}`}>
@@ -494,9 +526,8 @@ function Community() {
             {/* RIGHT PANEL / CHAT */}
 
             <div
-              className={`min-w-0 min-h-0 md:col-span-2 flex-col h-[calc(100dvh-180px)] md:h-[650px] overflow-hidden ${
-                showChat ? 'flex' : 'hidden md:flex'
-              }`}
+              className={`min-w-0 min-h-0 md:col-span-2 flex-col h-[calc(100dvh-180px)] md:h-[650px] overflow-hidden ${showChat ? 'flex' : 'hidden md:flex'
+                }`}
             >
 
               {active ? (
@@ -547,7 +578,7 @@ function Community() {
                   {/* MESSAGES - ONLY THIS SECTION SCROLLS */}
 
                   <div
-                    className="flex-1 min-h-0 overflow-y-auto overscroll-contain flex flex-col gap-4 bg-slate-50/60 p-4 sm:p-5"
+                    className="flex-1 min-h-0 overflow-y-auto overscroll-contain scrollbar-hide flex flex-col gap-4 bg-slate-50/60 p-4 sm:p-5"
                   >
 
                     {activeMessages.length > 0 ? (
@@ -556,9 +587,8 @@ function Community() {
 
                         <div
                           key={msg.id}
-                          className={`flex items-end gap-2 ${
-                            msg.own ? 'justify-end' : 'justify-start'
-                          }`}
+                          className={`flex items-end gap-2 ${msg.own ? 'justify-end' : 'justify-start'
+                            }`}
                         >
 
                           {!msg.own && (
@@ -568,9 +598,8 @@ function Community() {
                           )}
 
                           <div
-                            className={`flex max-w-[80%] flex-col ${
-                              msg.own ? 'items-end' : 'items-start'
-                            }`}
+                            className={`flex max-w-[80%] flex-col ${msg.own ? 'items-end' : 'items-start'
+                              }`}
                           >
 
                             {!msg.own && (
@@ -580,11 +609,10 @@ function Community() {
                             )}
 
                             <div
-                              className={`rounded-2xl px-4 py-2.5 text-sm ${
-                                msg.own
+                              className={`rounded-2xl px-4 py-2.5 text-sm ${msg.own
                                   ? 'rounded-br-sm bg-indigo-600 text-white'
                                   : 'rounded-bl-sm border border-slate-100 bg-white text-slate-700'
-                              }`}
+                                }`}
                             >
                               {msg.text}
                             </div>
