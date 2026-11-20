@@ -216,7 +216,7 @@ function Community() {
     <section className="min-h-screen rounded-2xl mb-20 bg-indigo-50 p-3 sm:p-5">
 
       {/* Page Header */}
-      <div className="  w-full max-w-4xl">
+      <div className="  w-full max-w-7xl mx-auto">
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 
@@ -239,231 +239,423 @@ function Community() {
           </button>
 
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="w-full max-w-7xl overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
 
-        <div className="grid min-h-[650px]   md:grid-cols-3">
+        {/* Main Content */}
+        <div className="w-full max-w-7xl overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
 
-          {/* Left Panel */}
-          <div
-            className={`flex-col border-r w-[400px]  border-slate-100 ${
-              showChat ? 'hidden md:flex' : 'flex'
-            }`}
-          >
+          <div className="grid min-h-[650px]   md:grid-cols-3">
 
-            {/* Tabs */}
-            <div className="flex border-b border-slate-100 p-2">
-
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveTab('my')
-                  setSearch('')
-                  setCategory('All')
-                }}
-                className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-3 text-sm font-semibold transition ${
-                  activeTab === 'my'
-                    ? 'bg-indigo-50 text-indigo-700'
-                    : 'text-slate-500 hover:bg-slate-50'
+            {/* Left Panel */}
+            <div
+              className={`flex-col border-r w-[400px]  border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
                 }`}
-              >
-                <FaUsers size={14} />
-                My Communities
-                <span className="rounded-full bg-white px-2 py-0.5 text-xs">
-                  {myCommunities.length}
-                </span>
-              </button>
+            >
 
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveTab('discover')
-                  setSearch('')
-                  setCategory('All')
-                }}
-                className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-3 text-sm font-semibold transition ${
-                  activeTab === 'discover'
-                    ? 'bg-indigo-50 text-indigo-700'
-                    : 'text-slate-500 hover:bg-slate-50'
-                }`}
-              >
-                <FaCompass size={14} />
-                Discover
-              </button>
+              {/* Tabs */}
+              <div className="flex border-b border-slate-100 p-2">
 
-            </div>
-
-            {/* Search */}
-            <div className="p-3">
-
-              <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 focus-within:border-indigo-400">
-
-                <FaSearch className="text-slate-400" size={14} />
-
-                <input
-                  type="text"
-                  value={search}
-                  onChange={e => setSearch(e.target.value)}
-                  placeholder="Search communities..."
-                  className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
-                />
-
-              </div>
-
-              {/* Category Filters */}
-              <div className="mt-3 flex flex-wrap gap-2 overflow-x-auto pb-1">
-
-                {categories.map(item => (
-                  <button
-                    key={item}
-                    type="button"
-                    onClick={() => setCategory(item)}
-                    className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                      category === item
-                        ? 'bg-indigo-600 text-white'
-                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTab('my')
+                    setSearch('')
+                    setCategory('All')
+                  }}
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-3 text-sm font-semibold transition ${activeTab === 'my'
+                      ? 'bg-indigo-50 text-indigo-700'
+                      : 'text-slate-500 hover:bg-slate-50'
                     }`}
-                  >
-                    {item}
-                  </button>
-                ))}
+                >
+                  <FaUsers size={14} />
+                  My Communities
+                  <span className="rounded-full bg-white px-2 py-0.5 text-xs">
+                    {myCommunities.length}
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTab('discover')
+                    setSearch('')
+                    setCategory('All')
+                  }}
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-3 text-sm font-semibold transition ${activeTab === 'discover'
+                      ? 'bg-indigo-50 text-indigo-700'
+                      : 'text-slate-500 hover:bg-slate-50'
+                    }`}
+                >
+                  <FaCompass size={14} />
+                  Discover
+                </button>
 
               </div>
-            </div>
 
-            {/* Community List */}
-            <div className="flex-1 overflow-y-auto">
+              {/* Search */}
+              <div className="p-3">
 
-              <div className="flex items-center justify-between px-4 py-2">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                  {activeTab === 'my'
-                    ? 'Your Communities'
-                    : 'Explore Communities'}
-                </p>
+                <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 focus-within:border-indigo-400">
 
-                <span className="text-xs text-slate-400">
-                  {displayedCommunities.length} results
-                </span>
-              </div>
+                  <FaSearch className="text-slate-400" size={14} />
 
-              {displayedCommunities.length > 0 ? (
-
-                <div className="divide-y w-[370px] divide-slate-100">
-
-                  {displayedCommunities.map(community => (
-
-                    activeTab === 'my' ? (
-
-                      /* Entire joined community row is clickable */
-                      <button
-                        key={community.id}
-                        type="button"
-                        onClick={() => openCommunity(community.id)}
-                        className={`flex w-full items-center gap-3 m-1 p-4 text-left transition hover:bg-indigo-50 ${
-                          activeCommunity === community.id && showChat
-                            ? 'bg-indigo-50'
-                            : 'bg-white'
-                        }`}
-                      >
-
-                        <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-md font-bold ${community.color}`}>
-                          {community.avatar}
-                        </div>
-
-                        <div className="min-w-0 flex-1">
-
-                          <div className="flex items-center justify-between gap-2">
-                            <h3 className="truncate text-xs font-semibold text-slate-800">
-                              {community.name}
-                            </h3>
-
-                            <span className="shrink-0 text-[11px] text-slate-400">
-                              {community.time}
-                            </span>
-                          </div>
-
-                          <div className="mt-1 flex items-center justify-between gap-2">
-
-                            <p className="truncate text-xs text-slate-500">
-                              {community.latest}
-                            </p>
-
-                            {community.unread > 0 && (
-                              <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-indigo-600 px-1.5 text-[10px] font-bold text-white">
-                                {community.unread}
-                              </span>
-                            )}
-
-                          </div>
-
-                        </div>
-
-                      </button>
-
-                    ) : (
-
-                      /* Discover community row with separate Join action */
-                      <div
-                        key={community.id}
-                        className="flex items-center gap-3  p-4 transition hover:bg-slate-50"
-                      >
-
-                        <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-lg font-bold ${community.color}`}>
-                          {community.avatar}
-                        </div>
-
-                        <div className="min-w-0 flex-1">
-
-                          <h3 className="truncate text-sm font-semibold text-slate-800">
-                            {community.name}
-                          </h3>
-
-                          <p className="mt-1 line-clamp-1 text-xs text-slate-500">
-                            {community.description}
-                          </p>
-
-                          <div className="mt-1 flex items-center gap-2 text-[11px] text-slate-400">
-                            <FaUsers size={10} />
-                            {community.members} members
-                            <span>•</span>
-                            {community.category}
-                          </div>
-
-                        </div>
-
-                        <button
-                          type="button"
-                          onClick={() => joinCommunity(community.id)}
-                          className="shrink-0 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-indigo-700"
-                        >
-                          Join
-                        </button>
-
-                      </div>
-
-                    )
-
-                  ))}
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                    placeholder="Search communities..."
+                    className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
+                  />
 
                 </div>
 
-              ) : (
+                {/* Category Filters */}
+                <div className="mt-3 flex flex-wrap gap-2 overflow-x-auto pb-1">
 
-                <div className="px-5 py-12 text-center">
+                  {categories.map(item => (
+                    <button
+                      key={item}
+                      type="button"
+                      onClick={() => setCategory(item)}
+                      className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition ${category === item
+                          ? 'bg-indigo-600 text-white'
+                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                        }`}
+                    >
+                      {item}
+                    </button>
+                  ))}
 
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400">
-                    <FaUsers size={20} />
+                </div>
+              </div>
+
+              {/* Community List */}
+              <div className="flex-1 overflow-y-auto">
+
+                <div className="flex items-center justify-between px-4 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    {activeTab === 'my'
+                      ? 'Your Communities'
+                      : 'Explore Communities'}
+                  </p>
+
+                  <span className="text-xs text-slate-400">
+                    {displayedCommunities.length} results
+                  </span>
+                </div>
+
+                {displayedCommunities.length > 0 ? (
+
+                  <div className="divide-y w-[370px] divide-slate-100">
+
+                    {displayedCommunities.map(community => (
+
+                      activeTab === 'my' ? (
+
+                        /* Entire joined community row is clickable */
+                        <button
+                          key={community.id}
+                          type="button"
+                          onClick={() => openCommunity(community.id)}
+                          className={`flex w-full items-center gap-3 m-1 p-4 text-left transition hover:bg-indigo-50 ${activeCommunity === community.id && showChat
+                              ? 'bg-indigo-50'
+                              : 'bg-white'
+                            }`}
+                        >
+
+                          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-md font-bold ${community.color}`}>
+                            {community.avatar}
+                          </div>
+
+                          <div className="min-w-0 flex-1">
+
+                            <div className="flex items-center justify-between gap-2">
+                              <h3 className="truncate text-xs font-semibold text-slate-800">
+                                {community.name}
+                              </h3>
+
+                              <span className="shrink-0 text-[11px] text-slate-400">
+                                {community.time}
+                              </span>
+                            </div>
+
+                            <div className="mt-1 flex items-center justify-between gap-2">
+
+                              <p className="truncate text-xs text-slate-500">
+                                {community.latest}
+                              </p>
+
+                              {community.unread > 0 && (
+                                <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-indigo-600 px-1.5 text-[10px] font-bold text-white">
+                                  {community.unread}
+                                </span>
+                              )}
+
+                            </div>
+
+                          </div>
+
+                        </button>
+
+                      ) : (
+
+                        /* Discover community row with separate Join action */
+                        <div
+                          key={community.id}
+                          className="flex items-center gap-3  p-4 transition hover:bg-slate-50"
+                        >
+
+                          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-lg font-bold ${community.color}`}>
+                            {community.avatar}
+                          </div>
+
+                          <div className="min-w-0 flex-1">
+
+                            <h3 className="truncate text-sm font-semibold text-slate-800">
+                              {community.name}
+                            </h3>
+
+                            <p className="mt-1 line-clamp-1 text-xs text-slate-500">
+                              {community.description}
+                            </p>
+
+                            <div className="mt-1 flex items-center gap-2 text-[11px] text-slate-400">
+                              <FaUsers size={10} />
+                              {community.members} members
+                              <span>•</span>
+                              {community.category}
+                            </div>
+
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() => joinCommunity(community.id)}
+                            className="shrink-0 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-indigo-700"
+                          >
+                            Join
+                          </button>
+
+                        </div>
+
+                      )
+
+                    ))}
+
                   </div>
 
-                  <h3 className="text-sm font-semibold text-slate-700">
-                    No communities found
-                  </h3>
+                ) : (
 
-                  <p className="mt-1 text-xs text-slate-400">
-                    Try changing your search or category.
+                  <div className="px-5 py-12 text-center">
+
+                    <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+                      <FaUsers size={20} />
+                    </div>
+
+                    <h3 className="text-sm font-semibold text-slate-700">
+                      No communities found
+                    </h3>
+
+                    <p className="mt-1 text-xs text-slate-400">
+                      Try changing your search or category.
+                    </p>
+
+                  </div>
+
+                )}
+
+              </div>
+
+            </div>
+
+            {/* Right Panel / Chat */}
+            <div
+              className={`flex-col md:col-span-2 min-h-0 h-[calc(100dvh-180px)] md:h-[650px] overflow-hidden ${showChat ? 'flex' : 'hidden md:flex'
+                }`}
+            >
+
+              {active ? (
+
+                <>
+
+                  {/* Chat Header */}
+                  <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3 sm:px-5">
+
+                    <div className="flex min-w-0 items-center gap-3">
+
+                      <button
+                        type="button"
+                        onClick={() => setShowChat(false)}
+                        className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 md:hidden"
+                      >
+                        <FaArrowLeft />
+                      </button>
+
+                      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-bold ${active.color}`}>
+                        {active.avatar}
+                      </div>
+
+                      <div className="min-w-0">
+                        <h2 className="truncate text-sm font-bold text-slate-800">
+                          {active.name}
+                        </h2>
+
+                        <p className="text-xs text-slate-400">
+                          {active.members} members
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <button
+                      type="button"
+                      className="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100"
+                    >
+                      <FaEllipsisV size={14} />
+                    </button>
+
+                  </div>
+
+                  {/* Community Information */}
+                  <div className="border-b border-indigo-100 bg-indigo-50/70 px-4 py-3 text-center">
+
+                    <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-indigo-600">
+                      <FaHashtag size={16} />
+                    </div>
+
+                    <h3 className="text-sm font-semibold text-slate-700">
+                      Welcome to {active.name}
+                    </h3>
+
+                    <p className="mx-auto mt-1 max-w-md text-xs text-slate-500">
+                      {active.description}
+                    </p>
+
+                  </div>
+
+                  {/* Messages */}
+                  <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain flex flex-col gap-4 bg-slate-50/60 p-4 sm:p-5">
+
+                    {activeMessages.length > 0 ? (
+
+                      activeMessages.map(msg => (
+
+                        <div
+                          key={msg.id}
+                          className={`flex items-end gap-2 ${msg.own ? 'justify-end' : 'justify-start'
+                            }`}
+                        >
+
+                          {!msg.own && (
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-[10px] font-bold text-indigo-700">
+                              {msg.initials}
+                            </div>
+                          )}
+
+                          <div className={`max-w-[80%] sm:max-w-[70%] ${msg.own ? 'items-end' : 'items-start'
+                            } flex flex-col`}>
+
+                            {!msg.own && (
+                              <span className="mb-1 ml-1 text-[11px] font-semibold text-slate-500">
+                                {msg.sender}
+                              </span>
+                            )}
+
+                            <div className={`rounded-2xl px-4 py-2.5 text-sm ${msg.own
+                                ? 'rounded-br-sm bg-indigo-600 text-white'
+                                : 'rounded-bl-sm border border-slate-100 bg-white text-slate-700'
+                              }`}>
+                              {msg.text}
+                            </div>
+
+                            <span className="mt-1 text-[10px] text-slate-400">
+                              {msg.time}
+                            </span>
+
+                          </div>
+
+                        </div>
+
+                      ))
+
+                    ) : (
+
+                      <div className="m-auto text-center">
+                        <FaComments className="mx-auto mb-3 text-3xl text-slate-300" />
+
+                        <p className="text-sm font-semibold text-slate-600">
+                          Start a conversation
+                        </p>
+
+                        <p className="mt-1 text-xs text-slate-400">
+                          Be the first to send a message.
+                        </p>
+                      </div>
+
+                    )}
+
+                  </div>
+
+                  {/* Message Input */}
+                  <form
+                    onSubmit={handleSendMessage}
+                    className="border-t sticky bottom-0 right-0 left-0 border-slate-100 bg-white p-3 sm:p-4"
+                  >
+
+                    <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 p-2 focus-within:border-indigo-400">
+
+                      <input
+                        type="text"
+                        value={message}
+                        onChange={e => setMessage(e.target.value)}
+                        placeholder={`Message ${active.name}...`}
+                        className="min-w-0 flex-1 bg-transparent px-2 text-sm text-slate-700 outline-none placeholder:text-slate-400"
+                      />
+
+                      <button
+                        type="submit"
+                        disabled={!message.trim()}
+                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+                      >
+                        <FaPaperPlane size={13} />
+                      </button>
+
+                    </div>
+
+                    <p className="mt-2 text-center text-[10px] text-slate-400">
+                      Keep conversations respectful and professional.
+                    </p>
+
+                  </form>
+
+                </>
+
+              ) : (
+
+                /* Empty Chat State */
+                <div className="flex flex-1 flex-col items-center justify-center p-6 text-center">
+
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-500">
+                    <FaComments size={28} />
+                  </div>
+
+                  <h2 className="text-lg font-bold text-slate-800">
+                    Your developer community
+                  </h2>
+
+                  <p className="mt-2 max-w-sm text-sm text-slate-500">
+                    Select a community from the list to connect with members,
+                    share ideas and participate in discussions.
                   </p>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab('discover')}
+                    className="mt-5 flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700 md:hidden"
+                  >
+                    <FaCompass size={13} />
+                    Discover Communities
+                  </button>
 
                 </div>
 
@@ -473,207 +665,7 @@ function Community() {
 
           </div>
 
-          {/* Right Panel / Chat */}
-          <div
-            className={`flex-col md:col-span-2 ${
-              showChat ? 'flex' : 'hidden md:flex'
-            }`}
-          >
-
-            {active ? (
-
-              <>
-
-                {/* Chat Header */}
-                <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3 sm:px-5">
-
-                  <div className="flex min-w-0 items-center gap-3">
-
-                    <button
-                      type="button"
-                      onClick={() => setShowChat(false)}
-                      className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 md:hidden"
-                    >
-                      <FaArrowLeft />
-                    </button>
-
-                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-bold ${active.color}`}>
-                      {active.avatar}
-                    </div>
-
-                    <div className="min-w-0">
-                      <h2 className="truncate text-sm font-bold text-slate-800">
-                        {active.name}
-                      </h2>
-
-                      <p className="text-xs text-slate-400">
-                        {active.members} members
-                      </p>
-                    </div>
-
-                  </div>
-
-                  <button
-                    type="button"
-                    className="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100"
-                  >
-                    <FaEllipsisV size={14} />
-                  </button>
-
-                </div>
-
-                {/* Community Information */}
-                <div className="border-b border-indigo-100 bg-indigo-50/70 px-4 py-3 text-center">
-
-                  <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-indigo-600">
-                    <FaHashtag size={16} />
-                  </div>
-
-                  <h3 className="text-sm font-semibold text-slate-700">
-                    Welcome to {active.name}
-                  </h3>
-
-                  <p className="mx-auto mt-1 max-w-md text-xs text-slate-500">
-                    {active.description}
-                  </p>
-
-                </div>
-
-                {/* Messages */}
-                <div className="flex flex-1 flex-col gap-4 overflow-y-auto bg-slate-50/60 p-4 sm:p-5">
-
-                  {activeMessages.length > 0 ? (
-
-                    activeMessages.map(msg => (
-
-                      <div
-                        key={msg.id}
-                        className={`flex items-end gap-2 ${
-                          msg.own ? 'justify-end' : 'justify-start'
-                        }`}
-                      >
-
-                        {!msg.own && (
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-[10px] font-bold text-indigo-700">
-                            {msg.initials}
-                          </div>
-                        )}
-
-                        <div className={`max-w-[80%] sm:max-w-[70%] ${
-                          msg.own ? 'items-end' : 'items-start'
-                        } flex flex-col`}>
-
-                          {!msg.own && (
-                            <span className="mb-1 ml-1 text-[11px] font-semibold text-slate-500">
-                              {msg.sender}
-                            </span>
-                          )}
-
-                          <div className={`rounded-2xl px-4 py-2.5 text-sm ${
-                            msg.own
-                              ? 'rounded-br-sm bg-indigo-600 text-white'
-                              : 'rounded-bl-sm border border-slate-100 bg-white text-slate-700'
-                          }`}>
-                            {msg.text}
-                          </div>
-
-                          <span className="mt-1 text-[10px] text-slate-400">
-                            {msg.time}
-                          </span>
-
-                        </div>
-
-                      </div>
-
-                    ))
-
-                  ) : (
-
-                    <div className="m-auto text-center">
-                      <FaComments className="mx-auto mb-3 text-3xl text-slate-300" />
-
-                      <p className="text-sm font-semibold text-slate-600">
-                        Start a conversation
-                      </p>
-
-                      <p className="mt-1 text-xs text-slate-400">
-                        Be the first to send a message.
-                      </p>
-                    </div>
-
-                  )}
-
-                </div>
-
-                {/* Message Input */}
-                <form
-                  onSubmit={handleSendMessage}
-                  className="border-t border-slate-100 bg-white p-3 sm:p-4"
-                >
-
-                  <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 p-2 focus-within:border-indigo-400">
-
-                    <input
-                      type="text"
-                      value={message}
-                      onChange={e => setMessage(e.target.value)}
-                      placeholder={`Message ${active.name}...`}
-                      className="min-w-0 flex-1 bg-transparent px-2 text-sm text-slate-700 outline-none placeholder:text-slate-400"
-                    />
-
-                    <button
-                      type="submit"
-                      disabled={!message.trim()}
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
-                    >
-                      <FaPaperPlane size={13} />
-                    </button>
-
-                  </div>
-
-                  <p className="mt-2 text-center text-[10px] text-slate-400">
-                    Keep conversations respectful and professional.
-                  </p>
-
-                </form>
-
-              </>
-
-            ) : (
-
-              /* Empty Chat State */
-              <div className="flex flex-1 flex-col items-center justify-center p-6 text-center">
-
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-500">
-                  <FaComments size={28} />
-                </div>
-
-                <h2 className="text-lg font-bold text-slate-800">
-                  Your developer community
-                </h2>
-
-                <p className="mt-2 max-w-sm text-sm text-slate-500">
-                  Select a community from the list to connect with members,
-                  share ideas and participate in discussions.
-                </p>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('discover')}
-                  className="mt-5 flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700 md:hidden"
-                >
-                  <FaCompass size={13} />
-                  Discover Communities
-                </button>
-
-              </div>
-
-            )}
-
-          </div>
-
         </div>
-
       </div>
 
     </section>
