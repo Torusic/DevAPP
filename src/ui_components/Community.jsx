@@ -213,10 +213,10 @@ function Community() {
   }
 
   return (
-    <section className="min-h-screen rounded-2xl bg-indigo-50 p-3 sm:p-5">
+    <section className="min-h-screen rounded-2xl mb-20 bg-indigo-50 p-3 sm:p-5">
 
       {/* Page Header */}
-      <div className="mx-auto mb-5 max-w-7xl">
+      <div className="  w-full max-w-4xl">
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 
@@ -232,7 +232,7 @@ function Community() {
 
           <button
             type="button"
-            className="flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
+            className="flex items-center justify-center gap-2 mb-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
           >
             <FaPlus size={12} />
             Create Community
@@ -242,13 +242,13 @@ function Community() {
       </div>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
+      <div className="w-full max-w-7xl overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
 
-        <div className="grid min-h-[650px] md:grid-cols-3">
+        <div className="grid min-h-[650px]   md:grid-cols-3">
 
           {/* Left Panel */}
           <div
-            className={`flex-col border-r border-slate-100 ${
+            className={`flex-col border-r w-[400px]  border-slate-100 ${
               showChat ? 'hidden md:flex' : 'flex'
             }`}
           >
@@ -313,7 +313,7 @@ function Community() {
               </div>
 
               {/* Category Filters */}
-              <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+              <div className="mt-3 flex flex-wrap gap-2 overflow-x-auto pb-1">
 
                 {categories.map(item => (
                   <button
@@ -350,7 +350,7 @@ function Community() {
 
               {displayedCommunities.length > 0 ? (
 
-                <div className="divide-y divide-slate-100">
+                <div className="divide-y w-[370px] divide-slate-100">
 
                   {displayedCommunities.map(community => (
 
