@@ -519,7 +519,7 @@ function Community() {
 
 
                   {/* Messages */}
-                  <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain flex flex-col gap-4 bg-slate-50/60 p-4 sm:p-5">
+                  <div className="flex-1 min-h-0  overflow-y-auto overscroll-contain flex flex-col gap-4 bg-slate-50/60 p-4 sm:p-5">
 
                     {activeMessages.length > 0 ? (
 
@@ -584,7 +584,7 @@ function Community() {
                   {/* Message Input */}
                   <form
                     onSubmit={handleSendMessage}
-                    className="border-t sticky bottom-0 right-0 left-0 border-slate-100 bg-white p-3 sm:p-4"
+                    className="border-t fixed bottom-20 z-50 right-2 left-2 border-slate-100 bg-white p-3 sm:p-4"
                   >
 
                     <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 p-2 focus-within:border-indigo-400">
