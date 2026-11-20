@@ -1091,7 +1091,7 @@ function Profile() {
   // --------------------------------
 
   return (
-    <section className="min-h-screen rounded-2xl bg-indigo-50/60 p-2 sm:p-4">
+    <section className="min-h-screen rounded-2xl mb-20 bg-indigo-50/60 p-2 sm:p-4">
 
       <div className="mx-auto max-w-7xl space-y-5">
 
