@@ -383,7 +383,7 @@ function Community() {
 
               {/* COMMUNITY LIST */}
 
-              <div className="flex-1 p-2 border bg-gray-100 m-2 rounded-2xl border-indigo-100  ">
+              <div className="flex-1 p-2 border bg-white m-2 rounded-2xl border-indigo-100  ">
 
                 <div className="flex items-center justify-between px-4 py-2">
 
@@ -401,7 +401,7 @@ function Community() {
 
                 {displayedCommunities.length > 0 ? (
 
-                  <div className="divide-y p-2 h-[320px] lg:h-[470px] border border-slate-200  rounded-2xl  bg-white m-2 overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
+                  <div className="divide-y p-2 h-[320px] lg:h-[470px]   rounded-2xl  bg-white m-2 overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
 
                     {displayedCommunities.map(community => (
 
