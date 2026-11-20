@@ -213,7 +213,7 @@ function Community() {
   }
 
   return (
-    <section className="min-h-screen max-w-7xl w-full  rounded-2xl mb-20 bg-indigo-50 p-3 sm:p-5">
+    <section className="min-h-screen   rounded-2xl mb-20 bg-indigo-50 p-2 ">
 
       {/* Page Header */}
       <div className="  w-full lg:max-w-7xl max-w-4xl ">
