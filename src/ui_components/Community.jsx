@@ -213,10 +213,10 @@ function Community() {
   }
 
   return (
-    <section className="min-h-screen rounded-2xl mb-20 bg-indigo-50 p-3 sm:p-5">
+    <section className="min-h-screen max-w-7xl w-full  rounded-2xl mb-20 bg-indigo-50 p-3 sm:p-5">
 
       {/* Page Header */}
-      <div className="  w-full max-w-7xl mx-auto">
+      <div className="  w-full lg:max-w-7xl max-w-4xl ">
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 
@@ -516,22 +516,7 @@ function Community() {
 
                   </div>
 
-                  {/* Community Information */}
-                  <div className="border-b border-indigo-100 bg-indigo-50/70 px-4 py-3 text-center">
 
-                    <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-indigo-600">
-                      <FaHashtag size={16} />
-                    </div>
-
-                    <h3 className="text-sm font-semibold text-slate-700">
-                      Welcome to {active.name}
-                    </h3>
-
-                    <p className="mx-auto mt-1 max-w-md text-xs text-slate-500">
-                      {active.description}
-                    </p>
-
-                  </div>
 
                   {/* Messages */}
                   <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain flex flex-col gap-4 bg-slate-50/60 p-4 sm:p-5">
