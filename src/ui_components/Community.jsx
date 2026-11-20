@@ -284,14 +284,14 @@ function Community() {
 
         {/* MAIN CONTENT */}
 
-        <div className="w-full max-w-7xl overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
+        <div className="w-full max-w-7xl  overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
 
-          <div className="grid min-h-[650px] md:grid-cols-3">
+          <div className="grid min-h-[600px]   md:grid-cols-3">
 
             {/* LEFT PANEL */}
 
             <div
-              className={`min-w-0 flex-col border-r border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
+              className={`min-w-0 flex-col border-r sticky top-0 border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
                 }`}
             >
 
@@ -383,7 +383,7 @@ function Community() {
 
               {/* COMMUNITY LIST */}
 
-              <div className="flex-1  ">
+              <div className="flex-1 p-2  ">
 
                 <div className="flex items-center justify-between px-4 py-2">
 
@@ -401,7 +401,7 @@ function Community() {
 
                 {displayedCommunities.length > 0 ? (
 
-                  <div className="divide-y  h-[450px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
+                  <div className="divide-y p-2 h-[420px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
 
                     {displayedCommunities.map(community => (
 
