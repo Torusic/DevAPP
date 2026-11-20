@@ -401,7 +401,7 @@ function Community() {
 
                 {displayedCommunities.length > 0 ? (
 
-                  <div className="divide-y p-2 h-[330px] lg:h-[470px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
+                  <div className="divide-y p-2 h-[320px] lg:h-[470px] overflow-y-auto overscroll-contain scrollbar-hide divide-slate-100">
 
                     {displayedCommunities.map(community => (
 
