@@ -271,7 +271,7 @@ function Community() {
                     setCategory('All')
                     setShowChat(false)
                   }}
-                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-2 py-3 text-xs sm:text-sm font-semibold transition ${
+                  className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-2 py-3 text-xs  font-semibold transition ${
                     activeTab === 'my'
                       ? 'bg-indigo-50 text-indigo-700'
                       : 'text-slate-500 hover:bg-slate-50'
