@@ -286,18 +286,18 @@ function Community() {
 
         <div className="w-full max-w-7xl  overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
 
-          <div className="grid min-h-[600px]   md:grid-cols-3">
+          <div className="grid min-h-[650px]   md:grid-cols-3">
 
             {/* LEFT PANEL */}
 
             <div
-              className={`min-w-0 flex-col border-r sticky top-0 border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
+              className={`min-w-0 flex-col border-r z-50 fixed top-20 border-slate-100 ${showChat ? 'hidden md:flex' : 'flex'
                 }`}
             >
 
               {/* TABS */}
 
-              <div className="flex border-b border-slate-100 p-2">
+              <div className="flex border-b border-slate-100 p-1">
 
                 <button
                   type="button"
@@ -315,7 +315,7 @@ function Community() {
                   <FaUsers size={14} />
                   My Communities
 
-                  <span className="rounded-full bg-white px-2 py-0.5 text-xs">
+                  <span className="rounded-full bg-white px-1 py-0.5 text-xs">
                     {myCommunities.length}
                   </span>
                 </button>
