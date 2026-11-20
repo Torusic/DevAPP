@@ -411,7 +411,7 @@ function Community() {
                           key={community.id}
                           type="button"
                           onClick={() => openCommunity(community.id)}
-                          className={`flex w-full items-center gap-3 my-2 border-b border-b-blue-200   p-4 text-left rounded-lg transition hover:bg-indigo-50 ${activeCommunity === community.id && showChat
+                          className={`flex w-full items-center gap-3 my-2    p-4 text-left rounded-lg transition hover:bg-indigo-50 ${activeCommunity === community.id && showChat
                               ? 'bg-blue-50'
                               : 'bg-white'
                             }`}
