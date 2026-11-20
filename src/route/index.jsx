@@ -8,6 +8,7 @@ import Header from "@/ui_components/Header";
 import Internships from "@/ui_components/opportunities/Internships";
 import Jobs from "@/ui_components/opportunities/Jobs";
 import Opportunity from "@/ui_components/Opportunity";
+import Profile from "@/ui_components/Profile";
 
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
@@ -50,6 +51,9 @@ const router = createBrowserRouter([
           {
             path:'community',
             element:<Community/>
+          },{
+            path:'profile',
+            element:<Profile/>
           }
         ],
       },
